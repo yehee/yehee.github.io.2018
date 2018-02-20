@@ -10,6 +10,7 @@
       <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
       <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+      <script type='text/javascript' src='animation-on-scroll.js'></script>
       <style type="text/css" media="screen">
          .header-contact-list {
          width:25%;
@@ -101,33 +102,7 @@
          }
       </style>
       <script type="text/javascript" charset="utf-8">
-         $(function(){  // $(document).ready shorthand
-         	$('.monster').fadeIn('slow');
-         });
          
-         $(document).ready(function() {
-         
-         /* Every time the window is scrolled ... */
-         $(window).scroll( function(){
-         
-           /* Check the location of each desired element */
-           $('.column-container').each(function(i){
-               
-               var bottom_of_object = $(this).position().top + $(this).outerHeight();
-               var bottom_of_window = $(window).scrollTop() + $(window).height();
-               
-               /* If the object is completely visible in the window, fade it it */
-               if( bottom_of_window > bottom_of_object - 400 ){
-                   
-                   $(this).animate({'opacity':'1'},1500);
-                       
-               }
-               
-           }); 
-         
-         });
-         
-         });
       </script>
    </head>
    <!-- MAIN CONTENT -->
@@ -155,9 +130,9 @@
             </div>
          </div>
          <div class="main-menu" ></div>
-         <div class="column-container" id="PROFILE">
+         <div class="column-container" id="PROFILE" style="opacity:1;">
             <div class="profile-contact sidebar" style="">
-               <img class="sidebar" src="irene.png" style="display:block;width:100%;height:100%;"></img>
+               <img class="sidebar" src="irene.png" style="display:block;width:100%;height:100%;margin-bottom:50px;"></img>
             </div>
             <div class="profile-contact main" style="">
                <div class="profile-contact inner-wrapper">
@@ -187,7 +162,7 @@
                </div>
             </div>
          </div>
-         <div class="column-container" id="INTRODUCTION">
+         <div class="column-container" id="INTRODUCTION" style="opacity:1;">
             <div class="intro sidebar" style="height:500px;">
                <p class="padding-30" style="float:right;">INTRODUCTION</p>
             </div>
