@@ -7,176 +7,239 @@
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
       <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
       <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
       <style type="text/css" media="screen">
+         
+         .header-contact-list {
+            width:25%;
+            float:left;
+         }
+         html, body{
+         padding: 0;
+         margin: 0;
+         }
          body {
-         font-family: 'Nunito', sans-serif;
-         background: #f5f5f5;
-         margin: auto;
-         width: 100%;
+         font-family: 'Montserrat', sans-serif;
+         line-height: 1.75em;
          }
-         h1, h2, h3, h4, h5, h6 {
-         font-weight: 900;
+         .sidebar {
+         width:33.3%;
+         float:left;
+         min-height:500px;           
          }
-         .wrapper {
-         position: relative;
-         overflow: hidden;
+         .main {
+         width:66.6%;
+         float:right;
+         min-height:500px;
          }
-         .padding-30px {
+         .inner-wrapper {
          padding:30px;
          }
-         .project {
-         padding: 30px;
-         background: white;
-         color:black;
-         transition-property: background, color;
-         transition-duration: 1s;
+         .column-container {
+         min-width:500px;
+         overflow: auto;
          }
-         .project:hover {
-         background: black;
-         color: white;
+         li {
+         display:inline;
+         padding:30px;
          }
-         .career {
-         padding: 30px;
-         background: white;
-         color:black;
-         transition-property: background;
-         transition-duration: 1s;
+         .padding-30 {
+            padding:30px;
          }
-         .career:hover {
-         background: #ffcce5;
+         a {
+            color:black;
+            text-decoration-line: none;
          }
-         img {
-         width: 100%;
-		 display:block;
+         a:active {
+            color:black;
          }
-         div.polaroid {
-         width: 30%;
-         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-         text-align: center;
-         margin:1% auto;
-		 transition-property:box-shadow;
-		 transition-duration:1s;
+         a:hover {
+            color:#000066;
          }
-		 div.polaroid:hover {
-         box-shadow: 0px 0px #ffffff;
+         a:visited {
+            color:black;
          }
-         div.project-detail {
-         padding: 10px;
-         transition-property: background;
-         transition-duration: 1s;
+         a.learn-more {
+            color:#7070db;
          }
-         div.project-detail:hover {
-         background:#ffcce5;
+         @media only screen and (max-width: 1115px) and (min-width: 810px){
+            .header-contact-list {
+               font-size: 0.75em;
+            }
          }
-         .polaroid-container {
-         position: relative;
-         overflow: hidden;
+         @media only screen and (max-width: 810px){
+            .header-contact-list {
+               width:100%;
+               display:block;
+            }
+            .main-menu {
+               font-size: 0.75em;
+            }
          }
+         @media only screen and (max-width: 676px){
+            .main-menu {
+               font-size: 0.5em;
+            }
+         }
+         @media only screen and (max-width: 570px){
+            .main-menu {
+               font-size: 0.4em;
+            }
+         }
+
       </style>
       <script type="text/javascript" charset="utf-8"></script>
    </head>
    <!-- MAIN CONTENT -->
    <body>
-      <div class="wrapper">
-         <!-- DYNAMIC IMAGE -->
-         <div class="dynamic-image-block">
-            <img src="irene.png" style="display:block"></img>
+      <div class="wrapper" style="position:relative;margin:0 auto;">
+         <div class="main-menu" style="width:100%;position:fixed;top:0;left:0;right:0;">
+            <div class="main-menu-inner-wrapper" style="float:right;color:#000066">
+               <ul style="list-style-type:none;">
+                  <a href="#PROFILE"><li>PROFILE</li></a>
+                  <a href="#INTRODUCTION"><li>INTRODUCTION</li></a>
+                  <a href="#CAREER"><li>CAREER</li></a>
+                  <a href="#SKILLS"><li>SKILLS</li></a>
+                  <a href="#PROJECTS"><li>PROJECTS</li></a>
+               </ul>
+            </div>
          </div>
-         <!-- END DYNAMIC IMAGE -->
-         <!-- CAREER -->
-         <div class="career-container padding-30px" style="background: #99e6ff">
-            <span class="career-wrapper">
-               <h2>CAREER PROFILE</h2>
-               <div class="career" id="career1">
-                  <h4>Career1</h4>
-                  <p>Phasellus sed sagittis neque, ut faucibus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mattis risus. Proin condimentum elementum nunc, eu pharetra leo pellentesque euismod. </p>
+         <div class="main-menu" ></div>
+         <div class="column-container" id="PROFILE">
+            <div class="profile-contact sidebar" style="">
+               
+               <img src="irene.png" style="display:block;width:100%;height:100%;"></img>
+               
+            </div>
+            <div class="profile-contact main" style="">
+               <div class="profile-contact inner-wrapper">
+                  <h2>Alice</h2>
+                  <h3>Kim</h3>
+                  <p>Student at the University of British Columbia</p>
                </div>
-               <div class="career" id="career1">
-                  <h4>Career1</h4>
-                  <p>Phasellus sed sagittis neque, ut faucibus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mattis risus. Proin condimentum elementum nunc, eu pharetra leo pellentesque euismod. </p>
-               </div>
-               <div class="career" id="career1">
-                  <h4>Career1</h4>
-                  <p>Phasellus sed sagittis neque, ut faucibus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mattis risus. Proin condimentum elementum nunc, eu pharetra leo pellentesque euismod. </p>
-               </div>
-            </span>
-         </div>
-         <!-- END CAREER -->
-         <!-- PROFILE -->
-         <div class="profile-container padding-30px">
-            <span class="profile">
-               <h2>PERSONAL PROFILE</h2>
-               <p>Alice Kim</p>
-               <p>XXX-XXX-XXXX</p>
-               <a name="GitHub account" href="https://www.github.com/alice-0-kim">GitHub</a>
-               <a name="LinkedIn account" href="https://www.linkedin.com/in/alice-0-kim">LinkedIn</a>
-               <p>email.address@gmail.com</p>
-            </span>
-         </div>
-         <!-- END PROFILE -->
-         <!-- PROJECT -->
-         <div class="project-container padding-30px" style="display:block;">
-            <h2>PROJECTS</h2>
-            <div class="polaroid-container" style="overflow:hidden;display:flex;flex-wrap:wrap;">
-               <div class="polaroid">
-                  <img src="mountain.png" alt="MacOS" style="width:100%;">
-                  <div class="project-detail">
-                     <h4>Project1</h4>
-                     <p>Phasellus sed sagittis neque, ut faucibus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mattis risus. Proin condimentum elementum nunc, eu pharetra leo pellentesque euismod. </p>
+               <div class="header-contact-main" style="overflow:auto;padding:30px;" >
+                  <div class="header-contact-main-location header-contact-list">
+                     <h4>Location</h4>
+                     <address>Vancouver, BC</address>
                   </div>
-               </div>
-               <div class="polaroid">
-                  <img src="mountain.png" alt="MacOS" style="width:100%">
-                  <div class="project-detail">
-                     <h4>Project1</h4>
-                     <p>Phasellus sed sagittis neque, ut faucibus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mattis risus. Proin condimentum elementum nunc, eu pharetra leo pellentesque euismod. </p>
+                  <div class="header-contact-main-phone header-contact-list ">
+                     <h4>Phone</h4>
+                     <p>778.988.7498</p>
                   </div>
-               </div>
-               <div class="polaroid">
-                  <img src="mountain.png" alt="MacOS" style="width:100%">
-                  <div class="project-detail">
-                     <h4>Project1</h4>
-                     <p>Phasellus sed sagittis neque, ut faucibus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mattis risus. Proin condimentum elementum nunc, eu pharetra leo pellentesque euismod. </p>
+                  <div class="header-contact-main-web header-contact-list ">
+                     <h4>GitHub</h4>
+                     <a href="https://www.github.com/alice-0-kim"><p>/alice-0-kim</p></a>
                   </div>
-               </div>
-               <div class="polaroid">
-                  <img src="mountain.png" alt="MacOS" style="width:100%">
-                  <div class="project-detail">
-                     <h4>Project1</h4>
-                     <p>Phasellus sed sagittis neque, ut faucibus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mattis risus. Proin condimentum elementum nunc, eu pharetra leo pellentesque euismod. </p>
-                  </div>
-               </div>
-               <div class="polaroid">
-                  <img src="mountain.png" alt="MacOS" style="width:100%">
-                  <div class="project-detail">
-                     <h4>Project1</h4>
-                     <p>Phasellus sed sagittis neque, ut faucibus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mattis risus. Proin condimentum elementum nunc, eu pharetra leo pellentesque euismod. </p>
-                  </div>
-               </div>
-               <div class="polaroid">
-                  <img src="mountain.png" alt="MacOS" style="width:100%">
-                  <div class="project-detail">
-                     <h4>Project1</h4>
-                     <p>Phasellus sed sagittis neque, ut faucibus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mattis risus. Proin condimentum elementum nunc, eu pharetra leo pellentesque euismod. </p>
+                  <div class="header-contact-main-email header-contact-list ">
+                     <h4>Email</h4>
+                     <p>alice828ubc@gmail.com</p>
                   </div>
                </div>
             </div>
          </div>
-         <!-- END PROJECT -->
-		 <!-- FOOTER -->
-         <div class="profile-container padding-30px">
-            <span class="profile">
-               <h2>PERSONAL PROFILE</h2>
-               <p>Alice Kim</p>
-               <p>XXX-XXX-XXXX</p>
-               <a name="GitHub account" href="https://www.github.com/alice-0-kim">GitHub</a>
-               <a name="LinkedIn account" href="https://www.linkedin.com/in/alice-0-kim">LinkedIn</a>
-               <p>email.address@gmail.com</p>
-            </span>
+         <div class="column-container" id="INTRODUCTION">
+            <div class="intro sidebar" style="height:500px;">
+               <p class="padding-30" style="float:right;">PROFILE</p>
+            </div>
+            <div class="intro main" style="">
+               <div class="profile-container" style="padding:30px;height:500px;">
+                  <p>
+                     I am a student at the University of British Columbia pursuing a Bachelor's degree in Computer Science and Statistics.
+                  </p>
+                  <br>
+                  <p>
+                      I am currently interested in <span style="color:green;">machine learning</span> and programming in <span style="color:green;">Python</span>. Currently, I am doing an internship on campus, mainly responsible for directly communicating with clients about website migration, resolving issues and/or simple feature requests for current websites.
+                  </p>
+               </div>
+            </div>
          </div>
-         <!-- END FOOTER -->
+         <div class="column-container" id="CAREER">
+            <div class="work-experience sidebar" style="">
+               <p class="padding-30" style="float:right;">WORK EXPERIENCE</p>
+            </div>
+            <div class="work-experience main" style="">
+               <div class="work-experience-container" style="padding:30px;">
+                  <div class="work-experience--1">
+                     <h4>Quality Assurance Support Specialist</h4>
+                     <p>Languages: JavaScript, CSS, PHP</p>
+                     <p>Tools: Drupal, Platform.sh, GitHub, Blackfire.io</p>
+                     <p>IDEs: PHPStorm</p>
+                     <hr>
+                     <p>I am mainly responsible for resolving tickets from existing clients and redirecting potential clients to the right person to speak to. The contents of an incident include requesting a new feature, creating and assigning roles to a new account, and regular maintenance of websites.</p>
+                  </div>
+                  <br><br>
+                  <div class="work-experience--2">
+                     <h4>Barista</h4>
+                     <p>Blenz</p>
+                     <ADDRESS>3381 Wesbrook Mall, Vancouver BC, Canada</ADDRESS>
+                     <hr>
+                     <p>Main tasks include greeting and taking orders from customers, serving food or beverages, and maintaining hygiene workplace.</p>
+                  </div>
+                  <br><br>
+                  <div class="work-experience--3">
+                     <h4>Teaching Assistant</h4>
+                     <p>University of British Columbia</p>
+                     <p>CPSC 121: Models of Computation</p>
+                     <hr>
+                     <p>I was responsible for leading a weekly tutorial session with students of 15. Also, I was present at each lecture to assist students with understanding the core concept of the course.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="column-container" id="SKILLS">
+            <div class="skills sidebar" style="">
+               <p class="padding-30" style="float:right;">SKILLS</p>
+            </div>
+            <div class="skills main" style="">
+               <div class="skills-container" style="padding:30px;">
+                  <div class="skills--1">
+                     <h4>Drupal</h4>
+                     <p>Language: JavaScript, CSS, PHP</p>
+                     <hr>
+                     <p>An effective content management system.</p> 
+                  </div>
+                  <br><br>
+                  <div class="skills--2">
+                     <h4>JavaScript</h4>
+                     <p>Programming language</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="column-container" id="PROJECTS">
+            <div class="projects sidebar" style="">
+               <p class="padding-30" style="float:right;">PROJECTS</p>
+            </div>
+            <div class="projects main" style="">
+               <div class="projects-container" style="padding:30px;">
+                  <div class="projects--1">
+                     <h4>Shinobi vs. Robot</h4>
+                     <p>Language: JavaScript</p>
+                     <p>Web: HTML</p>
+                     <a class="learn-more" href="https://github.com/alice-0-kim/game"><p>Learn more</p></a>
+                  </div>
+                  <br><br>
+                  <div class="projects--2">
+                     <h4>Shinobi vs. Robot</h4>
+                     <p>Language: JavaScript</p>
+                     <p>Web: HTML</p>
+                     <a class="learn-more" href="https://github.com/alice-0-kim/game"><p>Learn more</p></a>
+                  </div>
+                  <br><br>
+                  <div class="projects--3">
+                     <h4>Shinobi vs. Robot</h4>
+                     <p>Language: JavaScript</p>
+                     <p>Web: HTML</p>
+                     <a class="learn-more" href="https://github.com/alice-0-kim/game"><p>Learn more</p></a>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
+      <!-- END MAIN CONTENT -->
+      <!-- FOOTER -->
+      <!-- END FOOTER -->
    </body>
 </html>
