@@ -11,10 +11,9 @@
       <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
       <style type="text/css" media="screen">
-         
          .header-contact-list {
-            width:25%;
-            float:left;
+         width:25%;
+         float:left;
          }
          html, body{
          padding: 0;
@@ -45,63 +44,91 @@
          .column-container {
          min-width:500px;
          overflow: auto;
+         opacity:0;
          }
          li {
          display:inline;
          padding:30px;
          }
          .padding-30 {
-            padding:30px;
+         padding:30px;
          }
          a {
-            color:black;
-            text-decoration-line: none;
+         color:black;
+         text-decoration-line: none;
          }
          a:active {
-            color:black;
+         color:black;
          }
          a:hover {
-            color:#000066;
+         color:#000066;
          }
          a:visited {
-            color:black;
+         color:black;
          }
          a.learn-more {
-            color:#7070db;
+         color:#7070db;
          }
          @media only screen and (max-width: 1115px) and (min-width: 810px){
-            .header-contact-list {
-               font-size: 0.75em;
-            }
+         .header-contact-list {
+         font-size: 0.75em;
+         }
          }
          @media only screen and (max-width: 810px){
-            .header-contact-list {
-               width:100%;
-               display:block;
-            }
-            .main-menu {
-               font-size: 0.75em;
-            }
+         .header-contact-list {
+         width:100%;
+         display:block;
+         }
+         .main-menu {
+         font-size: 0.75em;
+         }
          }
          @media only screen and (max-width: 676px){
-            .main-menu {
-               font-size: 0.5em;
-            }
-            li {
-               display:block;
-            }
-            .column-container {
-            	z-index: -1;
-        	}
+         .main-menu {
+         font-size: 0.5em;
+         }
+         li {
+         display:block;
+         }
+         .column-container {
+         z-index: -1;
+         }
          }
          @media only screen and (max-width: 570px){
-            .main-menu {
-               font-size: 0.4em;
-            }
+         .main-menu {
+         font-size: 0.4em;
          }
-
+         }
       </style>
-      <script type="text/javascript" charset="utf-8"></script>
+      <script type="text/javascript" charset="utf-8">
+         $(function(){  // $(document).ready shorthand
+         	$('.monster').fadeIn('slow');
+         });
+         
+         $(document).ready(function() {
+         
+         /* Every time the window is scrolled ... */
+         $(window).scroll( function(){
+         
+           /* Check the location of each desired element */
+           $('.column-container').each(function(i){
+               
+               var bottom_of_object = $(this).position().top + $(this).outerHeight();
+               var bottom_of_window = $(window).scrollTop() + $(window).height();
+               
+               /* If the object is completely visible in the window, fade it it */
+               if( bottom_of_window > bottom_of_object - 400 ){
+                   
+                   $(this).animate({'opacity':'1'},1500);
+                       
+               }
+               
+           }); 
+         
+         });
+         
+         });
+      </script>
    </head>
    <!-- MAIN CONTENT -->
    <body>
@@ -109,20 +136,28 @@
          <div class="main-menu" style="width:100%;position:fixed;top:0;left:0;right:0;">
             <div class="main-menu-inner-wrapper" style="float:right;color:#000066">
                <ul style="list-style-type:none;">
-                  <a href="#PROFILE"><li>PROFILE</li></a>
-                  <a href="#INTRODUCTION"><li>INTRODUCTION</li></a>
-                  <a href="#CAREER"><li>CAREER</li></a>
-                  <a href="#SKILLS"><li>SKILLS</li></a>
-                  <a href="#PROJECTS"><li>PROJECTS</li></a>
+                  <a href="#PROFILE">
+                     <li>PROFILE</li>
+                  </a>
+                  <a href="#INTRODUCTION">
+                     <li>INTRODUCTION</li>
+                  </a>
+                  <a href="#CAREER">
+                     <li>CAREER</li>
+                  </a>
+                  <a href="#SKILLS">
+                     <li>SKILLS</li>
+                  </a>
+                  <a href="#PROJECTS">
+                     <li>PROJECTS</li>
+                  </a>
                </ul>
             </div>
          </div>
          <div class="main-menu" ></div>
          <div class="column-container" id="PROFILE">
             <div class="profile-contact sidebar" style="">
-               
-               <img src="irene.png" style="display:block;width:100%;height:100%;"></img>
-               
+               <img class="sidebar" src="irene.png" style="display:block;width:100%;height:100%;"></img>
             </div>
             <div class="profile-contact main" style="">
                <div class="profile-contact inner-wrapper">
@@ -141,7 +176,9 @@
                   </div>
                   <div class="header-contact-main-web header-contact-list ">
                      <h4>GitHub</h4>
-                     <a href="https://www.github.com/alice-0-kim"><p>/alice-0-kim</p></a>
+                     <a href="https://www.github.com/alice-0-kim">
+                        <p>/alice-0-kim</p>
+                     </a>
                   </div>
                   <div class="header-contact-main-email header-contact-list ">
                      <h4>Email</h4>
@@ -161,7 +198,7 @@
                   </p>
                   <br>
                   <p>
-                      I am currently interested in <span style="color:green;">machine learning</span> and programming in <span style="color:green;">Python</span>. Currently, I am doing an internship on campus, mainly responsible for directly communicating with clients about website migration, resolving issues and/or simple feature requests for current websites.
+                     I am currently interested in <span style="color:green;">machine learning</span> and programming in <span style="color:green;">Python</span>. Currently, I am doing an internship on campus, mainly responsible for directly communicating with clients about website migration, resolving issues and/or simple feature requests for current websites.
                   </p>
                </div>
             </div>
@@ -209,7 +246,7 @@
                      <h4>Drupal</h4>
                      <p>Language: JavaScript, CSS, PHP</p>
                      <hr>
-                     <p>An effective content management system.</p> 
+                     <p>An effective content management system.</p>
                   </div>
                   <br><br>
                   <div class="skills--2">
@@ -228,23 +265,32 @@
                   <div class="projects--1">
                      <h4>Shinobi vs. Robot</h4>
                      <p>Language: JavaScript, HTML</p>
-                     <a class="learn-more" href="https://github.com/alice-0-kim/game"><p>Learn more</p></a>
+                     <a class="learn-more" href="https://github.com/alice-0-kim/game">
+                        <p>Learn more</p>
+                     </a>
                   </div>
                   <br><br>
                   <div class="projects--2">
                      <h4>My Website</h4>
                      <p>Language: HTML, CSS</p>
-                     <a class="learn-more" href="https://github.com/alice-0-kim/alice-0-kim.github.io"><p>Learn more</p></a>
+                     <a class="learn-more" href="https://github.com/alice-0-kim/alice-0-kim.github.io">
+                        <p>Learn more</p>
+                     </a>
                   </div>
                   <br><br>
                   <div class="projects--3">
                      <h4>Christmas Card</h4>
                      <p>Android Studio</p>
                      <p>Language: Java</p>
-                     <a class="learn-more" href="https://github.com/alice-0-kim/Christmas_Card"><p>Learn more</p></a>
+                     <a class="learn-more" href="https://github.com/alice-0-kim/Christmas_Card">
+                        <p>Learn more</p>
+                     </a>
                   </div>
                </div>
             </div>
+         </div>
+         <div class="column-container" style="height:150px;">
+         
          </div>
       </div>
       <!-- END MAIN CONTENT -->
