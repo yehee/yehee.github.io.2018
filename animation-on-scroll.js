@@ -6,7 +6,7 @@ $(document).ready(function () {
 			var top_of_object = $(this).position().top;
 			var bottom_of_window = $(window).scrollTop() + $(window).height();
 			/* If the object is completely visible in the window, fade it it */
-			if (bottom_of_window > top_of_object + 50) {
+			if (bottom_of_window > top_of_object + 10) {
 				$(this).animate({
 					'opacity': '1'
 				}, 2000);
