@@ -3,13 +3,15 @@ $(document).ready(function () {
 	$(window).scroll(function () {
 		/* Checks the location of each desired element */
 		$('.column-container').each(function (i) {
-			var bottom_of_object = $(this).position().top + $(this).outerHeight();
+			var top_of_object = $(this).position().top;
+			console.log("top_of_object: " + top_of_object)
 			var bottom_of_window = $(window).scrollTop() + $(window).height();
+			console.log(bottom_of_window)
 			/* If the object is completely visible in the window, fade it it */
-			if (bottom_of_window > bottom_of_object - 500) {
+			if (bottom_of_window > top_of_object - 50) {
 				$(this).animate({
 					'opacity': '1'
-				}, 1500);
+				}, 2000);
 			}
 		});
 	});

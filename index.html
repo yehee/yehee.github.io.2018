@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
       <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
       <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+      <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
       <script type='text/javascript' src='animation-on-scroll.js'></script>
       <style type="text/css" media="screen">
@@ -71,63 +71,59 @@
          color:#7070db;
          }
          input[type=text], select, textarea {
-			width: 100%;
-			padding: 12px;
-			border: none;
-			border-bottom: 1px solid black;
-			box-sizing: border-box;
-			margin-top: 6px;
-			margin-bottom: 16px;
-			resize: vertical;
-		}
-
-		input[type=submit] {
-			background-color: #5353c6;
-			color: white;
-			padding: 12px 20px;
-			border: none;
-			border-radius: 4px;
-			cursor: pointer;
-		}
-
-		input[type=submit]:hover {
-			background-color: #3939ac;
-		}
-
-		.container {
-			border-radius: 5px;
-			padding: 20px;
-		}
-		label {
-			font-size:1.15em;
-		}
+         width: 100%;
+         padding: 12px;
+         border: none;
+         border-bottom: 1px solid black;
+         box-sizing: border-box;
+         margin-top: 6px;
+         margin-bottom: 16px;
+         resize: vertical;
+         }
+         input[type=submit] {
+         background-color: #5353c6;
+         color: white;
+         padding: 12px 20px;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+         }
+         input[type=submit]:hover {
+         background-color: #3939ac;
+         }
+         .container {
+         border-radius: 5px;
+         padding: 20px;
+         }
+         label {
+         font-size:1.15em;
+         }
          @media only screen and (min-width: 1385px){
-			 .icon {
-				visibility:hidden;
-			 }
+         .icon {
+         visibility:hidden;
          }
-    	 @media only screen and (max-width: 1385px){
-			li {
-			display:none;
-			}
-			.icon {
-			float:right;
-			padding-right:30px;
-			display: inline-block;
-			}
-			.topnav.responsive {position: relative;}
-			.topnav.responsive .icon {
-			position: absolute;
-			right: 0;
-			top: 0;
-			}
-			.topnav.responsive a {
-			float: none;
-			display: block;
-			text-align: left;
-			}
          }
-
+         @media only screen and (max-width: 1385px){
+         li {
+         display:none;
+         }
+         .icon {
+         float:right;
+         padding-right:30px;
+         display: inline-block;
+         }
+         .topnav.responsive {position: relative;}
+         .topnav.responsive .icon {
+         position: absolute;
+         right: 0;
+         top: 0;
+         }
+         .topnav.responsive a {
+         float: none;
+         display: block;
+         text-align: left;
+         }
+         }
          @media only screen and (max-width: 1115px) and (min-width: 810px){
          .header-contact-list {
          font-size: 0.75em;
@@ -135,7 +131,6 @@
          }
          @media only screen and (max-width: 810px){
          .profile-contact {
-         width:100%;
          display:block;
          }
          .header-contact-list {
@@ -143,9 +138,14 @@
          width:50%;
          display:inline-block;
          }
-         }
          .main-menu {
          font-size: 0.75em;
+         }
+         .sidebar, .main {
+         width:100%;
+         position:relative;
+         margin:auto;
+         min-height:200px;
          }
          }
          @media only screen and (max-width: 676px){
@@ -158,25 +158,34 @@
          font-size: 0.4em;
          }
          }
-		 @media only screen and (max-width: 500px){
-         .sidebar, .main {
-			 width:100%;
-			 position:relative;
-			 margin:auto;
-         }
-         .icon {
-         }
+         @media only screen and (max-width: 500px){
          }
       </style>
       <script type="text/javascript" charset="utf-8">
-		function myFunction() {
-			var x = document.getElementById("menu-items");
-			if (x.className === "topnav") {
-				x.className += " responsive";
-			} else {
-				x.className = "topnav";
-			}
-		}
+         function myFunction() {
+         	var x = document.getElementById("menu-items");
+         	if (x.className === "toggle_on") {
+         		x.className = "toggle_off";
+                   toggle_menu_off();
+         	} else {
+         		x.className = "toggle_on";
+                   toggle_menu_on();
+         	}
+         }
+             function toggle_menu_on() {
+                var item_list = document.getElementsByClassName("item");
+                for (var item of item_list) {
+                   item.display = "block";
+                   item.float = "right";
+                }
+             }
+             function toggle_menu_off() {
+                var item_list = document.getElementsByClassName("item");
+                for (var item of item_list) {
+                   item.display = "none";
+                }
+             }
+             
       </script>
    </head>
    <!-- MAIN CONTENT -->
@@ -184,37 +193,36 @@
       <div class="wrapper" style="position:relative;margin:0 auto;">
          <div class="main-menu" style="width:100%;position:fixed;top:0;left:0;right:0;">
             <div class="main-menu-inner-wrapper main" style="color:#000066;">
-               <ul class="topnav" id="menu-items" style="list-style-type:none;float:right;">
-                  <a href="#PROFILE">
+               <ul class="toggle_off" id="menu-items" style="list-style-type:none;float:right;">
+                  <a class="item" href="#PROFILE">
                      <li>PROFILE</li>
                   </a>
-                  <a href="#INTRODUCTION">
+                  <a class="item" href="#INTRODUCTION">
                      <li>INTRODUCTION</li>
                   </a>
-                  <a href="#CAREER">
+                  <a class="item" href="#CAREER">
                      <li>CAREER</li>
                   </a>
-                  <a href="#SKILLS">
+                  <a class="item" href="#SKILLS">
                      <li>SKILLS</li>
                   </a>
-                  <a href="#PROJECTS">
+                  <a class="item" href="#PROJECTS">
                      <li>PROJECTS</li>
                   </a>
-                  <a href="#CONTACT">
+                  <a class="item" href="#CONTACT">
                      <li>CONTACT</li>
                   </a>
                   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
                </ul>
-
             </div>
          </div>
          <div class="column-container" id="PROFILE" style="opacity:1;">
             <div class="profile-contact sidebar" style="">
-               <img class="sidebar" src="irene.png" style="display:block;width:100%;height:100%;margin-bottom:50px;"></img>
+               <img class="sidebar" src="mountain.jpg" style="display:block;width:100%;height:auto;margin-bottom:50px;z-index:-1;"></img>
             </div>
             <div class="profile-contact main" style="">
                <div class="profile-contact inner-wrapper">
-                  <h2>Alice</h2>
+                  <h2 style="font-size:3em;">Alice</h2>
                   <h3>Kim</h3>
                   <p>Student at the University of British Columbia</p>
                </div>
@@ -240,8 +248,8 @@
                </div>
             </div>
          </div>
-         <div class="column-container" id="INTRODUCTION" style="opacity:1;">
-            <div class="intro sidebar" style="height:500px;">
+         <div class="column-container" id="INTRODUCTION">
+            <div class="intro sidebar">
                <p class="padding-30" style="float:right;">INTRODUCTION</p>
             </div>
             <div class="intro main" style="">
@@ -257,7 +265,7 @@
             </div>
          </div>
          <div class="column-container" id="CAREER">
-            <div class="work-experience sidebar" style="">
+            <div class="work-experience sidebar">
                <p class="padding-30" style="float:right;">CAREER</p>
             </div>
             <div class="work-experience main" style="">
@@ -299,11 +307,12 @@
                      <h4>Drupal</h4>
                      <p>Language: JavaScript, CSS, PHP</p>
                      <hr>
-                     <p>An effective content management system.</p>
+                     <p>An open-source content-management framework.</p>
                   </div>
                   <br><br>
                   <div class="skills--2">
                      <h4>JavaScript</h4>
+                     <hr>
                      <p>Programming language</p>
                   </div>
                </div>
@@ -343,36 +352,30 @@
             </div>
          </div>
          <div class="column-container" id="CONTACT">
-        	<div class="contact-form sidebar" style="">
+            <div class="contact-form sidebar" style="">
                <p class="padding-30" style="float:right;">CONTACT</p>
             </div>
-         	<div class="container main" style="padding:0px;">
-         		<div class="contact-form" style="padding:45px 100px 50px 30px;">
-				  <form action="mailto:aliceykim0828@gmail.com" method="post" enctype="text/plain">
-					<label for="fname">First Name</label>
-					<input type="text" id="fname" name="firstname" placeholder="Your first name here.">
-
-					<label for="lname">Last Name</label>
-					<input type="text" id="lname" name="lastname" placeholder="Your last name here.">
-					
-					<label for="email">E-mail</label>
-					<input type="text" id="email" name="email" placeholder="Your e-mail here.">
-
-					<label for="subject">Contacting about</label>
-					<select id="subject" name="subject">
-					  <option value="internship">Internship opportunity</option>
-					  <option value="good">This is a good website!</option>
-					  <option value="bello">Just to say hi :)</option>
-					</select>
-
-					<label for="message">Subject</label>
-					<textarea id="message" name="message" placeholder="Say hi?" style="height:200px"></textarea>
-
-					<input type="submit" value="Submit" name="submit">
-				  </form>
-
-         		</div>
-			</div>
+            <div class="container main" style="padding:0px;">
+               <div class="contact-form" style="padding:45px 100px 50px 30px;">
+                  <form action="mailto:aliceykim0828@gmail.com" method="post" enctype="text/plain">
+                     <label for="fname">First Name</label>
+                     <input type="text" id="fname" name="firstname" placeholder="Your first name here.">
+                     <label for="lname">Last Name</label>
+                     <input type="text" id="lname" name="lastname" placeholder="Your last name here.">
+                     <label for="email">E-mail</label>
+                     <input type="text" id="email" name="email" placeholder="Your e-mail here.">
+                     <label for="subject">Contacting about</label>
+                     <select id="subject" name="subject">
+                        <option value="internship">Internship opportunity</option>
+                        <option value="good">This is a good website!</option>
+                        <option value="bello">Just to say hi :)</option>
+                     </select>
+                     <label for="message">Subject</label>
+                     <textarea id="message" name="message" placeholder="Say hi?" style="height:200px"></textarea>
+                     <input type="submit" value="Submit" name="submit">
+                  </form>
+               </div>
+            </div>
          </div>
       </div>
       <!-- END MAIN CONTENT -->
