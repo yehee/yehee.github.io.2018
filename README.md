@@ -1,4 +1,4 @@
-# :tulip: Resume website template :tulip:
+# Resume website template :mountain_snow:
 
 A responsive theming template project.
 
