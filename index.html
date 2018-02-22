@@ -106,7 +106,7 @@
 			 }
          }
     	 @media only screen and (max-width: 1385px){
-			li {
+			.item {
 			display:none;
 			}
 			.icon {
@@ -180,14 +180,16 @@
       function toggle_menu_on() {
          var item_list = document.getElementsByClassName("item");
          for (var item of item_list) {
-            item.display = "block";
-            item.float = "right";
+            item.style.position = "static";
+            item.style.width = "inherit";
+            item.style.display = "block";
+            item.style.float = "right";
          }
       }
       function toggle_menu_off() {
          var item_list = document.getElementsByClassName("item");
          for (var item of item_list) {
-            item.display = "none";
+            item.style.display = "none";
          }
       }
       </script>
