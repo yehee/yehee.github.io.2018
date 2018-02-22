@@ -56,7 +56,7 @@
 				opacity: 0;
 			}
 
-			li {
+			.item {
 				display: inline;
 				padding: 30px 2vw;
 			}
@@ -151,7 +151,10 @@
 				width:66.6%;
 				float:right;
 			}
-
+			#first-name-h2 {
+				font-size:3em;
+				padding-top:10vw;
+			}
 			@media only screen and (min-width: 1385px) {
 				.icon {
 					visibility: hidden;
@@ -159,7 +162,7 @@
 			}
 
 			@media only screen and (max-width: 1385px) {
-				li {
+				.item {
 					display: none;
 				}
 				.icon {
@@ -207,6 +210,9 @@
 					margin: auto;
 					min-height: 200px;
 				}
+				#first-name-h2 {
+					padding-top:0px;
+				}
 			}
 
 			@media only screen and (max-width: 676px) {
@@ -224,58 +230,42 @@
 			@media only screen and (max-width: 500px) {}
       </style>
       <script type="text/javascript" charset="utf-8">
-         function myFunction() {
-         	var x = document.getElementById("menu-items");
-         	if (x.className === "toggle_on") {
-         		x.className = "toggle_off";
-                   toggle_menu_off();
-         	} else {
-         		x.className = "toggle_on";
-                   toggle_menu_on();
-         	}
-         }
-             function toggle_menu_on() {
-                var item_list = document.getElementsByClassName("item");
-                for (var item of item_list) {
-                   item.display = "block";
-                   item.float = "right";
-                }
-             }
-             function toggle_menu_off() {
-                var item_list = document.getElementsByClassName("item");
-                for (var item of item_list) {
-                   item.display = "none";
-                }
-             }
-             
+         function toggle_menu_items() {
+			var x = document.getElementById("menu-items");
+			if (x.className === "topnav") {
+				x.className += " responsive";
+			} else {
+				x.className = "topnav";
+			}
+		}             
       </script>
    </head>
    <!-- MAIN CONTENT -->
    <body>
       <div class="wrapper" style="position:relative;margin:0 auto;">
-         <div class="main-menu" style="width:100%;position:fixed;top:0;left:0;right:0;">
+         <div class="main-menu" style="width:100%;position:fixed;top:1em;left:0;right:0;">
             <div class="main-menu-inner-wrapper" style="color:#000066;">
-               <ul class="toggle_off" id="menu-items" style="list-style-type:none;float:right;">
+               <div class="topnav" id="menu-items" style="float:right;">
                   <a class="item" href="#PROFILE">
-                     <li>PROFILE</li>
+                     PROFILE
                   </a>
                   <a class="item" href="#INTRODUCTION">
-                     <li>INTRODUCTION</li>
+                     INTRODUCTION
                   </a>
                   <a class="item" href="#CAREER">
-                     <li>CAREER</li>
+                     CAREER
                   </a>
                   <a class="item" href="#SKILLS">
-                     <li>SKILLS</li>
+                     SKILLS
                   </a>
                   <a class="item" href="#PROJECTS">
-                     <li>PROJECTS</li>
+                     PROJECTS
                   </a>
                   <a class="item" href="#CONTACT">
-                     <li>CONTACT</li>
+                     CONTACT
                   </a>
-                  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-               </ul>
+                  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="toggle_menu_items()">&#9776;</a>
+               </div>
             </div>
          </div>
          <div class="column-container" id="PROFILE" style="opacity:1;">
@@ -284,7 +274,7 @@
             </div>
             <div class="profile-contact main">
                <div class="profile-contact inner-wrapper">
-                  <h2 style="font-size:3em;">Alice</h2>
+                  <h2 id="first-name-h2"">Alice</h2>
                   <h3>Kim</h3>
                   <p>Student at the University of British Columbia</p>
                </div>
