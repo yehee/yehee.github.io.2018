@@ -13,254 +13,300 @@
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
       <script type='text/javascript' src='animation-on-scroll.js'></script>
       <style type="text/css" media="screen">
-         .header-contact-list {
-         width:25%;
-         float:left;
-         }
-         html, body{
-         padding: 0;
-         margin: 0;
+         html,
+         body {
+            padding: 0;
+            margin: 0;
          }
          body {
-         font-family: 'Montserrat', sans-serif;
-         line-height: 1.75em;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.75em;
+         }
+         .header-contact-list {
+            width: 25%;
+            float: left;
          }
          h4 {
-         margin-top:.75em;
-         font-weight: 900;
-         font-size: 1.25em;
+            margin-top: .75em;
+            font-weight: 900;
+            font-size: 1.25em;
          }
          .sidebar {
-         width:33.3%;
-         float:left;
-         min-height:500px;           
+            width: 33.3%;
+            float: left;
+            min-height: 500px;
          }
          .main {
-         width:66.6%;
-         float:right;
-         min-height:500px;
+            width: 66.6%;
+            float: right;
+            min-height: 500px;
          }
          .inner-wrapper {
-         padding:30px;
+            padding: 30px;
          }
          .column-container {
-         overflow: auto;
-         opacity:0;
+            overflow: auto;
+            opacity: 0;
          }
-         li {
-         display:inline;
-         padding:30px 2vw;
-         }
-         .padding-30 {
-         padding:30px;
+         .item {
+            display: inline;
+            padding: 30px 2vw;
          }
          a {
-         color:black;
-         text-decoration-line: none;
+            color: black;
+            text-decoration-line: none;
          }
          a:active {
-         color:black;
+            color: black;
          }
          a:hover {
-         color:#000066;
+            color: #000066;
          }
          a:visited {
-         color:black;
+            color: black;
          }
          a.learn-more {
-         color:#7070db;
+            color: #7070db;
          }
-         input[type=text], select, textarea {
-			width: 100%;
-			padding: 12px;
-			border: none;
-			border-bottom: 1px solid black;
-			box-sizing: border-box;
-			margin-top: 6px;
-			margin-bottom: 16px;
-			resize: vertical;
-		}
-		input[type=submit] {
-			background-color: #5353c6;
-			color: white;
-			padding: 12px 20px;
-			border: none;
-			border-radius: 4px;
-			cursor: pointer;
-		}
-
-		input[type=submit]:hover {
-			background-color: #3939ac;
-		}
-
-		.container {
-			border-radius: 5px;
-			padding: 20px;
-		}
-		label {
-			font-size:1.15em;
-		}
-         @media only screen and (min-width: 1385px){
-			 .icon {
-				visibility:hidden;
-			 }
+         input[type=text],
+         select,
+         textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-bottom: 1px solid black;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
          }
-    	 @media only screen and (max-width: 1385px){
-			.item {
-			display:none;
-			}
-			.icon {
-			float:right;
-			padding-right:30px;
-			display: inline-block;
-			}
-			.topnav.responsive {position: relative;}
-			.topnav.responsive .icon {
-			position: absolute;
-			right: 0;
-			top: 0;
-			}
-			.topnav.responsive a {
-			float: none;
-			display: block;
-			text-align: left;
-			}
+         input[type=submit] {
+            background-color: #5353c6;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
          }
-
-         @media only screen and (max-width: 1115px) and (min-width: 810px){
-         .header-contact-list {
-         font-size: 0.75em;
+         input[type=submit]:hover {
+            background-color: #3939ac;
          }
+         .container {
+            border-radius: 5px;
+            padding: 20px;
          }
-         @media only screen and (max-width: 810px){
+         label {
+            font-size: 1.15em;
+         }
+         .contact-form-container {
+            padding: 0px;
+         }
+         .contact-form-main {
+            padding: 45px 100px 50px 30px;
+         }
+         #message {
+            height: 200px;
+         }
+         .sub-title {
+            padding: 30px;
+            float: right;
+         }
+         .profile-container,
+         .skills-container,
+         .projects-container,
+         .careers-container,
+         .education-container {
+            padding: 30px;
+         }
+         #profile-picture {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-bottom: 50px;
+            z-index: -1;
+         }
+         .main-menu-inner-wrapper {
+            width:66.6%;
+            float:right;
+         }
+         #first-name-h2 {
+            font-size:3em;
+            padding-top:10vw;
+         }
+         .entry-header {
+            position:relative;
+            padding-bottom:50px;
+         }
+         .entry-h4 {
+            float:left;
+            width:100%;
+            position:absolute;
+            top:0;
+            left:0;
+         }
+         .entry-p {
+            float:right;
+            color:red;
+            position:absolute;
+            top:0;
+            right:0;
+         }
+         @media only screen and (min-width: 1385px) {
+            .icon {
+               visibility: hidden;
+            }
+         }
+         @media only screen and (max-width: 1385px) {
+            .item {
+               display: none;
+            }
+            .icon {
+               float: right;
+               padding-right: 30px;
+               display: inline-block;
+            }
+            .topnav.responsive {
+               position: relative;
+            }
+            .topnav.responsive .icon {
+               position: absolute;
+               right: 0;
+               top: 0;
+            }
+            .topnav.responsive a {
+               float: none;
+               display: block;
+               text-align: left;
+            }
+         }
+         @media only screen and (max-width: 1115px) and (min-width: 810px) {
+            .header-contact-list {
+               font-size: 0.75em;
+            }
+         }
+         @media only screen and (max-width: 810px) {
             .profile-contact {
-            display:block;
+               display: block;
             }
             .header-contact-list {
-            font-size: 0.75em;
-            width:50%;
-            display:inline-block;
+               font-size: 0.75em;
+               width: 50%;
+               display: inline-block;
             }
-            
             .main-menu {
-            font-size: 0.75em;
+               font-size: 0.75em;
             }
-            .sidebar, .main {
-             width:100%;
-             position:relative;
-             margin:auto;
-             min-height:200px;
+            .sidebar,
+            .main {
+               width: 100%;
+               position: relative;
+               margin: auto;
+               min-height: 200px;
+            }
+            #first-name-h2 {
+               padding-top:0px;
+            }
+            .entry-p {
+               display:none;
             }
          }
-         @media only screen and (max-width: 676px){
+         @media only screen and (max-width: 676px) {
             .main-menu {
-            font-size: 0.5em;
+               font-size: 0.5em;
             }
          }
-         @media only screen and (max-width: 570px){
-         .main-menu {
-         font-size: 0.4em;
+         @media only screen and (max-width: 570px) {
+            .main-menu {
+               font-size: 0.4em;
+            }
          }
-         }
-		 @media only screen and (max-width: 500px){
-
-         }
+         @media only screen and (max-width: 500px) {}
       </style>
       <script type="text/javascript" charset="utf-8">
-		function myFunction() {
-			var x = document.getElementById("menu-items");
-			if (x.className === "toggle_on") {
-				x.className = "toggle_off";
-            toggle_menu_off();
-			} else {
-				x.className = "toggle_on";
-            toggle_menu_on();
-			}
-		}
-      function toggle_menu_on() {
-         var item_list = document.getElementsByClassName("item");
-         for (var item of item_list) {
-            item.style.position = "static";
-            item.style.width = "inherit";
-            item.style.display = "block";
-            item.style.float = "right";
+         function toggle_menu_items() {
+         var x = document.getElementById("menu-items");
+         if (x.className === "topnav") {
+            x.className += " responsive";
+            document.getElementById("main-menu").style.width = "auto";
+            document.getElementById("main-menu").style.left = "auto";
+            document.getElementById("main-menu-inner-wrapper").style.width = "auto";
+         } else {
+            x.className = "topnav";
+            document.getElementById("main-menu").style.width = "100%";
+            document.getElementById("main-menu-inner-wrapper").style.width = "66.6%";
          }
-      }
-      function toggle_menu_off() {
-         var item_list = document.getElementsByClassName("item");
-         for (var item of item_list) {
-            item.style.display = "none";
-         }
-      }
+      }             
       </script>
    </head>
    <!-- MAIN CONTENT -->
    <body>
       <div class="wrapper" style="position:relative;margin:0 auto;">
-         <div class="main-menu" style="width:100%;position:fixed;top:0;left:0;right:0;">
-            <div class="main-menu-inner-wrapper main" style="color:#000066;">
-               <ul class="toggle_off" id="menu-items" style="list-style-type:none;float:right;">
+         <div class="main-menu" id="main-menu" style="width:100%;position:fixed;top:1em;left:0;right:0;">
+            <div class="main-menu-inner-wrapper" id="main-menu-inner-wrapper" style="color:#000066;">
+               <div class="topnav" id="menu-items" style="float:right;">
                   <a class="item" href="#PROFILE">
-                     <li>PROFILE</li>
+                     PROFILE
                   </a>
                   <a class="item" href="#INTRODUCTION">
-                     <li>INTRODUCTION</li>
+                     INTRODUCTION
+                  </a>
+                  <a class="item" href="#EDUCATION">
+                     EDUCATION
                   </a>
                   <a class="item" href="#CAREER">
-                     <li>CAREER</li>
+                     CAREER
                   </a>
                   <a class="item" href="#SKILLS">
-                     <li>SKILLS</li>
+                     SKILLS
                   </a>
                   <a class="item" href="#PROJECTS">
-                     <li>PROJECTS</li>
+                     PROJECTS
                   </a>
                   <a class="item" href="#CONTACT">
-                     <li>CONTACT</li>
+                     CONTACT
                   </a>
-                  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-               </ul>
-
+                  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="toggle_menu_items()">&#9776;</a>
+               </div>
             </div>
          </div>
          <div class="column-container" id="PROFILE" style="opacity:1;">
-            <div class="profile-contact sidebar" style="">
-               <img class="sidebar" src="mountain.jpg" style="display:block;width:100%;height:auto;margin-bottom:50px;z-index:-1;"></img>
+            <div class="profile-contact sidebar">
+               <img id="profile-picture" class="sidebar" src="mountain.jpg"></img>
             </div>
-            <div class="profile-contact main" style="">
+            <div class="profile-contact main">
                <div class="profile-contact inner-wrapper">
-                  <h2>Alice</h2>
+                  <h2 id="first-name-h2"">Alice</h2>
                   <h3>Kim</h3>
                   <p>Student at the University of British Columbia</p>
                </div>
                <div class="header-contact-main" style="overflow:auto;padding:30px;" >
-                  <div class="header-contact-main-location header-contact-list">
+                  <div class="header-contact-list">
                      <h4>Location</h4>
                      <address>Vancouver, BC</address>
                   </div>
-                  <div class="header-contact-main-phone header-contact-list ">
+                  <div class="header-contact-list">
                      <h4>Phone</h4>
                      <p>778.988.7498</p>
                   </div>
-                  <div class="header-contact-main-web header-contact-list ">
+                  <div class="header-contact-list">
                      <h4>GitHub</h4>
                      <a href="https://www.github.com/alice-0-kim">
                         <p>/alice-0-kim</p>
                      </a>
                   </div>
-                  <div class="header-contact-main-email header-contact-list ">
+                  <div class="header-contact-list">
                      <h4>Email</h4>
                      <p>alice828ubc@gmail.com</p>
                   </div>
                </div>
             </div>
          </div>
-         <div class="column-container" id="INTRODUCTION" style="opacity:1;">
+         <div class="column-container" id="INTRODUCTION">
             <div class="intro sidebar">
-               <p class="padding-30" style="float:right;">INTRODUCTION</p>
+               <p class="sub-title">INTRODUCTION</p>
             </div>
-            <div class="intro main" style="">
-               <div class="profile-container" style="padding:30px;height:500px;">
+            <div class="intro main">
+               <div class="profile-container">
                   <p>
                      I am a student at the University of British Columbia pursuing a Bachelor's degree in Computer Science and Statistics.
                   </p>
@@ -271,67 +317,116 @@
                </div>
             </div>
          </div>
-         <div class="column-container" id="CAREER">
-            <div class="work-experience sidebar">
-               <p class="padding-30" style="float:right;">CAREER</p>
+         <div class="column-container" id="EDUCATION">
+            <div class="education sidebar">
+               <p class="sub-title">EDUCATION</p>
             </div>
-            <div class="work-experience main" style="">
-               <div class="work-experience-container" style="padding:30px;">
-                  <div class="work-experience--1">
-                     <h4>Quality Assurance Support Specialist</h4>
-                     <p>Languages: JavaScript, CSS, PHP</p>
-                     <p>Tools: Drupal, Platform.sh, GitHub, Blackfire.io</p>
-                     <p>IDEs: PHPStorm</p>
-                     <hr>
-                     <p>I am mainly responsible for resolving tickets from existing clients and redirecting potential clients to the right person to speak to. The contents of an incident include requesting a new feature, creating and assigning roles to a new account, and regular maintenance of websites.</p>
+            <div class="education main">
+               <div class="education-container">
+                  <div class="education">
+                     <div class="entry-header">
+                        <h4 class="entry-h4">University of British Columbia</h4>
+                        <p class="entry-p">2015 - PRESENT</p>
+                     </div>
+                     <div class="entry-footer" style="position:relative;margin:auto;">
+                        <p>Combined Major in Computer Science and Statistics, Bachelor of Science</p>
+                     </div>
+                  </div>                  
+               </div>
+            </div>
+         </div>
+         <div class="column-container" id="CAREER">
+            <div class="careers sidebar">
+               <p class="sub-title">CAREER</p>
+            </div>
+            <div class="careers main">
+               <div class="careers-container">
+                  <div>
+                     <div class="entry-header">
+                        <h4 class="entry-h4">Quality Assurance Support Specialist</h4>
+                        <p class="entry-p">JAN, 2018 - PRESENT</p>
+                     </div>
+                     <div class="entry-footer">
+                        <p style="line-height: 2em;">Languages: JavaScript, CSS, PHP<br>
+                        Tools: Drupal, Platform.sh, GitHub, Blackfire<br>
+                        IDEs: PHPStorm</p>
+                        <hr>
+                        <p>Mainly responsible for:</p>
+                        <ul style="list-style-type:*;line-height: 2em;">
+                           <li>simple feature requests</li>
+                           <li>test automation</li>
+                           <li>regular maintenance of the websites</li>
+                        </ul>
+                     </div>   
+                  </div>                  
+                  <br><br>
+                  <div>
+                     <div class="entry-header">
+                        <h4 class="entry-h4">Barista</h4>
+                        <p class="entry-p">AUG, 2016 - PRESENT</p>
+                     </div>
+                     <div class="entry-footer">
+                        <p>Blenz</p>
+                        <ADDRESS>3381 Wesbrook Mall, Vancouver BC, Canada</ADDRESS>                        
+                        <hr>
+                        <p>Mainly responsible for:</p>
+                        <ul style="list-style-type:*;line-height: 2em;">
+                           <li>greeting and taking orders from customers</li>
+                           <li>serving food and beverages</li>
+                           <li>maintaining hygiene workplace</li>
+                        </ul>
+                     </div>   
                   </div>
                   <br><br>
-                  <div class="work-experience--2">
-                     <h4>Barista</h4>
-                     <p>Blenz</p>
-                     <ADDRESS>3381 Wesbrook Mall, Vancouver BC, Canada</ADDRESS>
-                     <hr>
-                     <p>Main tasks include greeting and taking orders from customers, serving food or beverages, and maintaining hygiene workplace.</p>
-                  </div>
-                  <br><br>
-                  <div class="work-experience--3">
-                     <h4>Teaching Assistant</h4>
-                     <p>University of British Columbia</p>
-                     <p>CPSC 121: Models of Computation</p>
-                     <hr>
-                     <p>I was responsible for leading a weekly tutorial session with students of 15. Also, I was present at each lecture to assist students with understanding the core concept of the course.</p>
+                  <div>
+                     <div class="entry-header">
+                        <h4 class="entry-h4">Teaching Assistant</h4>
+                        <p class="entry-p">MAY, 2017 - JUL, 2017</p>
+                     </div>
+                     <div class="entry-footer">
+                        <p>University of British Columbia</p>
+                        <p>CPSC 121: Models of Computation</p>
+                        <hr>
+                        <p>Physical and mathematical structures of computation from boolean algebra to sequential instruction execution.</p>
+                     </div>   
                   </div>
                </div>
             </div>
          </div>
          <div class="column-container" id="SKILLS">
-            <div class="skills sidebar" style="">
-               <p class="padding-30" style="float:right;">SKILLS</p>
+            <div class="skills sidebar">
+               <p class="sub-title">SKILLS</p>
             </div>
-            <div class="skills main" style="">
-               <div class="skills-container" style="padding:30px;">
-                  <div class="skills--1">
+            <div class="skills main">
+               <div class="skills-container">
+                  <div class="skill">
                      <h4>Drupal</h4>
                      <p>Language: JavaScript, CSS, PHP</p>
                      <hr>
                      <p>An open-source content-management framework.</p>
                   </div>
                   <br><br>
-                  <div class="skills--2">
+                  <div class="skill">
                      <h4>JavaScript</h4>
                      <hr>
                      <p>Programming language</p>
+                  </div>
+                  <br><br>
+                  <div class="skill">
+                     <h4>Test Automation</h4>
+                     <hr>
+                     <p>Unit, performance testing and website monitoring.</p>
                   </div>
                </div>
             </div>
          </div>
          <div class="column-container" id="PROJECTS">
-            <div class="projects sidebar" style="">
-               <p class="padding-30" style="float:right;">PROJECTS</p>
+            <div class="projects sidebar">
+               <p class="sub-title">PROJECTS</p>
             </div>
-            <div class="projects main" style="">
-               <div class="projects-container" style="padding:30px;">
-                  <div class="projects--1">
+            <div class="projects main">
+               <div class="projects-container">
+                  <div class="project">
                      <h4>Shinobi vs. Robot</h4>
                      <p>Language: JavaScript, HTML</p>
                      <a class="learn-more" href="https://github.com/alice-0-kim/game">
@@ -339,7 +434,7 @@
                      </a>
                   </div>
                   <br><br>
-                  <div class="projects--2">
+                  <div class="project">
                      <h4>My Website</h4>
                      <p>Language: HTML, CSS</p>
                      <a class="learn-more" href="https://github.com/alice-0-kim/alice-0-kim.github.io">
@@ -347,7 +442,7 @@
                      </a>
                   </div>
                   <br><br>
-                  <div class="projects--3">
+                  <div class="project">
                      <h4>Christmas Card</h4>
                      <p>Android Studio</p>
                      <p>Language: Java</p>
@@ -359,36 +454,30 @@
             </div>
          </div>
          <div class="column-container" id="CONTACT">
-        	<div class="contact-form sidebar" style="">
-               <p class="padding-30" style="float:right;">CONTACT</p>
+            <div class="contact-form sidebar">
+               <p class="sub-title">CONTACT</p>
             </div>
-         	<div class="container main" style="padding:0px;">
-         		<div class="contact-form" style="padding:45px 100px 50px 30px;">
-				  <form action="mailto:aliceykim0828@gmail.com" method="post" enctype="text/plain">
-					<label for="fname">First Name</label>
-					<input type="text" id="fname" name="firstname" placeholder="Your first name here.">
-
-					<label for="lname">Last Name</label>
-					<input type="text" id="lname" name="lastname" placeholder="Your last name here.">
-					
-					<label for="email">E-mail</label>
-					<input type="text" id="email" name="email" placeholder="Your e-mail here.">
-
-					<label for="subject">Contacting about</label>
-					<select id="subject" name="subject">
-					  <option value="internship">Internship opportunity</option>
-					  <option value="good">This is a good website!</option>
-					  <option value="bello">Just to say hi :)</option>
-					</select>
-
-					<label for="message">Subject</label>
-					<textarea id="message" name="message" placeholder="Say hi?" style="height:200px"></textarea>
-
-					<input type="submit" value="Submit" name="submit">
-				  </form>
-
-         		</div>
-			</div>
+            <div class="contact-form-container main">
+               <div class="contact-form-main" >
+                  <form action="mailto:aliceykim0828@gmail.com" method="post" enctype="text/plain">
+                     <label for="fname">First Name</label>
+                     <input type="text" id="fname" name="firstname" placeholder="Your first name here.">
+                     <label for="lname">Last Name</label>
+                     <input type="text" id="lname" name="lastname" placeholder="Your last name here.">
+                     <label for="email">E-mail</label>
+                     <input type="text" id="email" name="email" placeholder="Your e-mail here.">
+                     <label for="subject">Contacting about</label>
+                     <select id="subject" name="subject">
+                        <option value="internship">Internship opportunity</option>
+                        <option value="good">This is a good website!</option>
+                        <option value="bello">Just to say hi :)</option>
+                     </select>
+                     <label for="message">Subject</label>
+                     <textarea id="message" name="message" placeholder="Say hi?"></textarea>
+                     <input type="submit" value="Submit" name="submit">
+                  </form>
+               </div>
+            </div>
          </div>
       </div>
       <!-- END MAIN CONTENT -->
