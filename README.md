@@ -2,7 +2,7 @@
 
 A responsive theming template project.
 
-Live site is [here](https://alice-0-kim.github.io).
+Visit the live website [&#10172;](https://alice-0-kim.github.io)
 
 ![screenshot](/images/screenshot.png)
 
