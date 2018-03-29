@@ -4,5 +4,7 @@ node_js:
   - "7"
 install:
   - npm install
+  - composer install
+  - bin/behat --init
 script:
   - bin/behat
