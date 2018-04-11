@@ -1,0 +1,89 @@
+body {
+     font-family: 'Comfortaa';
+}
+h1 {
+     font-family: 'Barlow';margin: 0;
+}
+#main-content {
+     position: relative;
+     margin: 0 auto;
+}
+ #top-row {
+     display: block;
+     background: #fff;
+}
+ #bottom-row {
+     display: flex;
+     background: grey;
+}
+ .page-title {
+     font-size: 2rem;
+     color: #c7dfff;
+     text-align: center;
+     padding: 2em 0;
+}
+ .page-description {
+     font-size: 1rem;
+     color: #c7dfff;
+     text-align: center;
+     padding: 2em 0;
+}
+ .card {
+     width: 33.3333%;
+     background: #fff;
+     display: inline-flex;
+     overflow: hidden;
+}
+ .image {
+     object-fit: cover;
+     width: 100%;
+     border-radius: 15px;
+     position: relative;
+}
+ .black-white {
+     -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
+     filter: grayscale(100%);
+     -webkit-transition: filter .5s;
+    /* Safari */
+     transition: filter .5s;
+}
+.expand-height {
+    -webkit-height: 50%;
+    /* Safari 6.0 - 9.0 */
+     height: 50%;
+     -webkit-transition: height .5s;
+    /* Safari */
+     transition: height .5s;
+}
+.expand-height:hover {
+      height: 100%;
+}
+ .black-white:hover {
+     filter: grayscale(0%);
+}
+ .card__inner:hover {
+     cursor: pointer;
+}
+ .card__text {
+position: absolute;
+     left: 0;
+     right: 0;
+     top: 50%;
+}
+ .card__text * {
+     text-align: center;
+}
+ .card:hover h3, .card:hover p {
+     color: #fff;
+}
+ .card h3, .card p {
+     color: #000;
+     -webkit-transition: color .5s;
+    /* Safari */
+     transition: color .5s;
+}
+ .card .card__inner {
+     margin: 10px;
+     position: relative;
+}
