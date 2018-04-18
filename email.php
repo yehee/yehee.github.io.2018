@@ -1,16 +1,35 @@
 <?php
-	if(isset($_POST['submit'])) {
-		$to = "aliceykim0828@gmail.com";
-		$subject = "Form Tutorial";
-		$name_field = $_POST['firstname'];
-		$email_field = $_POST['email'];
-		$message = $_POST['message'];
- 
-		$body = "From: $name_field\n E-Mail: $email_field\n Message:\n $message";
- 
-		echo "Data has been submitted to $to!";
-		mail($to, $subject, $body);
-	} else {
-		echo "Bello!";
-	}
+$to = "aliceykim0828@gmail.com";
+$subject = "Greetings!";
+
+$message = "
+<html>
+<head>
+<title>Hello, world!</title>
+</head>
+<body>
+<p>Greetings from Alice :)</p>
+<table>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+</tr>
+<tr>
+<td>John</td>
+<td>Doe</td>
+</tr>
+</table>
+</body>
+</html>
+";
+
+// Always set content-type when sending HTML email
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+$headers .= 'From: <webmaster@example.com>' . "\r\n";
+$headers .= 'Cc: myboss@example.com' . "\r\n";
+
+mail($to,$subject,$message,$headers);
 ?>
