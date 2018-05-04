@@ -11,13 +11,66 @@
       <link href='https://fonts.googleapis.com/css?family=Barlow' rel='stylesheet'>
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-      <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+      <script type="text/javascript">
+      	$(document).ready(function() {
+      		$('div').click(function() {
+      			var color__hex = '#';
+      			color__hex += Math.floor(Math.random()*16777215).toString(16);
+      			$('html').css('background', color__hex);
+      		});
+
+      		$(".page-title").click(function() {
+      			var color__hex = '#';
+      			color__hex += Math.floor(Math.random()*16777215).toString(16);
+      			// $(this).css('color', color__hex);
+      			$(this).animate({color: color__hex});
+      		});
+
+      		$(".page-title").hover(function() {
+      			var color__hex = '#';
+      			color__hex += Math.floor(Math.random()*16777215).toString(16);
+      			// $(this).css('color', color__hex);
+      			$(this).animate({color: color__hex});
+      		});
+      	});
+      </script>
    </head>
    
    <body>
 	   <!-- MAIN CONTENT -->
 	   <div id="main-content">
+	   		
+	   		<div id="bottom-row">
+	   			<div class="card black-white expand-height">
+	   				<div class="card__inner">
+	   					<img class="image" src="images/mountain.jpg">
+	   					<div class="card__text">
+		   					<h3>Project #1</h3>
+		   					<p>Some description of the project.</p>
+		   				</div>
+	   				</div>
+	   			</div>
+	   			<div class="card black-white expand-height">
+	   				<div class="card__inner">
+	   					<img class="image" src="images/mountain.jpg">
+	   					<div class="card__text">
+		   					<h3>Project #2</h3>
+		   					<p>Some description of the project.</p>
+		   				</div>
+	   				</div>
+	   			</div>
+	   			<div class="card black-white expand-height">
+	   				<div class="card__inner">
+	   					<img class="image" src="images/mountain.jpg">
+	   					<div class="card__text">
+		   					<h3>Project #3</h3>
+		   					<p>Some description of the project.</p>
+		   				</div>
+	   				</div>
+	   			</div>
+	   		</div>
 	   		<div id="top-row">
 	   			<div class="page-title"><h3 style="margin: 0;text-transform: uppercase;">Alice Kim</h3></div>
 	   			<div class="page-description">"Some inspirational quote."</div>
@@ -25,35 +78,6 @@
 					<a href="https://github.com/alice-0-kim"><i class="icon-github-sign"></i></a>&nbsp;
 					<a href="https://www.linkedin.com/in/alice-0-kim"><i class="icon-linkedin-sign"></i></a>&nbsp;
 		        </div>
-	   		</div>
-	   		<div id="bottom-row">
-	   			<div class="card">
-	   				<div class="card__inner">
-	   					<img class="black-white expand-height image" src="images/mountain.jpg">
-	   					<div class="card__text">
-		   					<h3>Project #1</h3>
-		   					<p>Some description of the project.</p>
-		   				</div>
-	   				</div>
-	   			</div>
-	   			<div class="card">
-	   				<div class="card__inner">
-	   					<img class="black-white expand-height image" src="images/mountain.jpg">
-	   					<div class="card__text">
-		   					<h3>Project #2</h3>
-		   					<p>Some description of the project.</p>
-		   				</div>
-	   				</div>
-	   			</div>
-	   			<div class="card">
-	   				<div class="card__inner">
-	   					<img class="black-white expand-height image" src="images/mountain.jpg">
-	   					<div class="card__text">
-		   					<h3>Project #3</h3>
-		   					<p>Some description of the project.</p>
-		   				</div>
-	   				</div>
-	   			</div>
 	   		</div>
 	   </div>
 	   <!-- END MAIN CONTENT -->
