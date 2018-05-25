@@ -27,12 +27,9 @@
       window.onscroll = function() { onScroll(); };
       
       function onScroll() {
-        var arrow = document.getElementById("arrow-hint");
-        var cover = document.getElementById("vid")
-        var x = arrow.getBoundingClientRect().top;
-        var y = cover.getBoundingClientRect().bottom - 100;
-        var z = cover.getBoundingClientRect().top;
-        arrow.style.opacity = x < y ? 1 : 0;
+        var arrow = document.getElementById("click-hint");
+        var x = arrow.getBoundingClientRect().top - 200;
+        arrow.style.opacity = x > 0 ? 1 : 0;
       }
       
       $(document).ready(function(){
@@ -65,7 +62,7 @@
   <!-- MAIN CONTENT -->
         <body>
           <div class="wrapper" style="position:relative;margin:0 auto;">
-            <div class="main-menu" id="main-menu" style="width:100%;position:fixed;top:1em;left:0;right:0;z-index:1000;">
+            <div class="main-menu" id="main-menu" style="width:100%;position:fixed;top:1em;left:0;right:0;z-index:1000;transition: width 0.5s;">
               <div class="main-menu-inner-wrapper" id="main-menu-inner-wrapper" style="color:#000066;">
                 <div class="topnav" id="menu-items" style="float:right;">
                   <a class="item" href="#PROFILE">
@@ -94,14 +91,12 @@
               </div>
             </div>
             <div class="banner">
-              <div class="banner-background">
+              <div class="banner-background" style="position:relative;">
                 <video id="vid" width="100%" height="100%" autoplay loop muted>
                   <source src="videos/Ferris-wheel.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-              </div>
-              <div id="arrow-hint" class="icon icon-arrow" style="position:fixed;left:0;right:0;bottom:0;margin:auto;width:30px;transition: opacity 0.5s, background 0.5s;background:rgba(0,0,0,0);">
-                <a href="#first-name-h2" style="width:30px;height:30px;">click</a>
+                <a href="#first-name-h2" id="click-hint" style="margin: 0 45%;width: 10%;position: absolute;bottom: 0;text-align: center;background: #fff;transition: opacity 0.5s;">CLICK</a>
               </div>
             </div>
               <div class="column-container" id="PROFILE" style="opacity:1;">
