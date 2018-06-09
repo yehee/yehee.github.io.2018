@@ -110,7 +110,15 @@ label {
 #message {
   height: 200px;
 }
-
+#main-menu {
+	width:100%;
+	position:fixed;
+	top:1em;
+	left:0;
+	right:0;
+	z-index:1000;
+	transition: width 0.5s;
+}
 .sub-title {
   padding: 30px;
   float: right;
@@ -128,7 +136,8 @@ label {
   z-index: -1;
 }
 
-.main-menu-inner-wrapper {
+#main-menu-inner-wrapper {
+	color:#000066;
   float: right;
 }
 
@@ -163,21 +172,33 @@ label {
 }
 #click-hint {
 	margin: 0 45%;
+	opacity: 1;
+	font-size: 3em;
+	font-weight: 900;
 	width: 10%;
 	position: absolute;
-	bottom: 30px;
+	bottom: 6rem;
 	text-align: center;
 	color: #fff;
 	transition: opacity 0.5s;
-	transform: rotate(90deg);
+	transform: translate3d(0px,0px,0px) rotate(90deg);
 }
 #click-hint span {
 	transition: opacity 0.5s;
 	opacity:0;
 	z-index:1000;
 }
+#click-hint:hover span:last-child {
+  opacity: 1;
+	transition: opacity 0.25s;
+}
 #click-hint:hover span {
   opacity: 1;
+	transition: opacity 0.75s;
+}
+#click-hint:hover span:first-child {
+  opacity: 1;
+	transition: opacity 1.25s;
 }
 
 @media only screen and (min-width: 1385px) {
