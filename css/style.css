@@ -110,15 +110,17 @@ label {
 #message {
   height: 200px;
 }
+
 #main-menu {
-	width:100%;
-	position:fixed;
-	top:1em;
-	left:0;
-	right:0;
-	z-index:1000;
-	transition: width 0.5s;
+  width: 100%;
+  position: fixed;
+  top: 1em;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: width 0.5s;
 }
+
 .sub-title {
   padding: 30px;
   float: right;
@@ -137,7 +139,7 @@ label {
 }
 
 #main-menu-inner-wrapper {
-	color:#000066;
+  color: #000066;
   float: right;
 }
 
@@ -170,35 +172,36 @@ label {
 .percentage-bar {
   background: linear-gradient(to right, #acb6e5, #afeeee);
 }
+
 #click-hint {
-	margin: 0 45%;
-	opacity: 1;
-	font-size: 3em;
-	font-weight: 900;
-	width: 10%;
-	position: absolute;
-	bottom: 6rem;
-	text-align: center;
-	color: #fff;
-	transition: opacity 0.5s;
-	transform: translate3d(0px,0px,0px) rotate(90deg);
-}
-#click-hint span {
-	transition: opacity 0.5s;
-	opacity:0;
-	z-index:1000;
-}
-#click-hint:hover span:last-child {
+  margin: 0 45%;
   opacity: 1;
-	transition: opacity 0.25s;
+  font-size: 3em;
+  font-weight: 900;
+  width: 10%;
+  position: absolute;
+  bottom: 1rem;
+  text-align: center;
+  color: #fff;
+  transition: opacity 0.5s;
+  transform: translate3d(0px,0px,0px) rotate(90deg);
 }
-#click-hint:hover span {
-  opacity: 1;
-	transition: opacity 0.75s;
+
+#click-hint:hover {
+  animation-duration: 0.3s;
+  animation-name: move;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
-#click-hint:hover span:first-child {
-  opacity: 1;
-	transition: opacity 1.25s;
+
+@keyframes move {
+  from {
+    bottom: 1rem;
+  }
+
+  to {
+    bottom: 2rem;
+  }
 }
 
 @media only screen and (min-width: 1385px) {
