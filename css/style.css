@@ -20,15 +20,18 @@ h4 {
 }
 
 .sidebar {
-  width: 33.3%;
+  width: 25%;
   float: left;
   min-height: 500px;
 }
 
 .main {
-  width: 66.6%;
+  width: 75%;
   float: right;
   min-height: 500px;
+  border-left: 1px solid lightgray;
+  box-sizing: border-box;
+  margin: 20px 0;
 }
 
 .inner-wrapper {
@@ -99,10 +102,6 @@ label {
   font-size: 1.15em;
 }
 
-.contact-form-container {
-  padding: 0px;
-}
-
 .contact-form-main {
   padding: 45px 100px 50px 30px;
 }
@@ -122,7 +121,7 @@ label {
 }
 
 .sub-title {
-  padding: 30px;
+  padding: 45px;
   float: right;
 }
 
@@ -172,7 +171,6 @@ label {
 .percentage-bar {
   background: linear-gradient(to right, #acb6e5, #afeeee);
 }
-
 #click-hint {
   margin: 0 45%;
   opacity: 1;
@@ -203,6 +201,87 @@ label {
     bottom: 2rem;
   }
 }
+
+* {
+	outline: none;
+}
+*:active {
+	outline: none;
+}
+
+.container p a {
+    transition: all 0.3s ease 0s;
+}
+.container p a:hover {
+	text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transform: translateY(-7px);
+}
+
+/* ----- commits ----- */
+.container {
+	width: 50%;
+	margin: 0 auto;
+}
+.container p,
+.container h2 {
+	text-align: center;
+}
+.container h4 {
+    width: fit-content;
+    margin: 0 auto;
+	border-bottom: 1px solid #5353c6;
+}
+.container input[type="text"] {
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+.container button {
+    display: block;
+    font-size: 10px;
+    text-align: center;
+    width: 88px;
+    margin: 25px auto;
+    background: #fff;
+    border-radius: 50px;
+    border: none;
+    padding: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.container button:hover {
+	color: #fff;
+    background: #5353c6;
+	box-shadow: 0px 15px 20px rgba(83, 83, 198, 0.4);
+	transform: translateY(-7px);
+}
+.right a {
+  text-decoration: none;
+  color: #000;
+  /* border-bottom: 1px solid #f66; */
+}
+li {
+  line-height: 1.5em;
+  margin: 20px 0;
+  list-style-type: none;
+}
+img {
+	height: 60px;
+	border-radius: 5px;
+}
+.right {
+    width: fit-content;
+    display: inline-block;
+    margin-left: 10px;
+    position: absolute;
+    margin-top: 10px;
+}
+
+/* ----- breakpoints ----- */
 
 @media only screen and (min-width: 1385px) {
   .icon {
@@ -263,7 +342,7 @@ label {
     width: 100%;
     position: relative;
     margin: auto;
-    min-height: 200px;
+    min-height: 100px;
   }
 
   #first-name-h2 {
@@ -276,6 +355,9 @@ label {
 
   #click-hint {
     display: none;
+  }
+  .sub-title {
+  	float: left;
   }
 }
 

@@ -6,17 +6,54 @@
       <title>Alice Kim | Student</title>
       <link rel="shortcut icon" type="image/png" href="favicon.png"></link>
       <!-- Bootstrap 3 -->
-      <link rel="stylesheet" href="css/style.min.css">
+      <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
       <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
       <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
       <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
       <script type='text/javascript' src='js/scripts.min.js'></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
    </head>
    <!-- MAIN CONTENT -->
    <body>
+	<div id="repos" class="container">
+		<h2><a href="https://github.com/alice-0-kim">@alice-0-kim</a></h2>
+		<p v-for="project in projects">
+			<a v-if="!project.fork" :href="project.html_url">{{ project.name }}</a>
+		</p>
+	</div>
+	<script src="js/repos.js"></script>
+	<div id="commits" class="container">
+		<input type="text" :id="directory" name="directory" v-model="directory"></input>
+		<button @click="fetchData" class="button">Send</button>
+		<p>Latest Commits on Github: 
+			<span>{{ directory }}</span>
+			at
+			<span>{{ currentBranch }}</span>
+		</p>
+		<h4>{{ directory }}@{{ currentBranch }}</h4>
+		<ul>
+			<li v-for="record in commits">
+				<img :src="record.author.avatar_url" class="left"/>
+				<div class="right">
+					<a :href="record.html_url" target="_blank" class="commit">{{ record.sha.slice(0, 7) }}</a>
+					-
+					<span class="message">{{ record.commit.message | truncate }}</span>
+					<br>
+					by
+					<span class="author">
+						<a :href="record.author.html_url" target="_blank">{{ record.commit.author.name }}</a>
+					</span>
+					at
+					<span class="date">{{ record.commit.author.date | formatDate }}</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<script src="js/commits.js"></script>
       <div class="wrapper" style="position:relative;margin:0 auto;">
          <div class="main-menu" id="main-menu">
             <div class="main-menu-inner-wrapper" id="main-menu-inner-wrapper">
