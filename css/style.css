@@ -1,6 +1,7 @@
+/* ----- home ----- */
 html, body {
-  padding: 0;
-  margin: 0;
+  /* padding: 0; */
+  /* margin: 0; */
 }
 
 body {
@@ -95,7 +96,7 @@ input[type=submit]:hover {
 
 .container {
   border-radius: 5px;
-  padding: 20px;
+  padding: 20px 20px;
 }
 
 label {
@@ -209,16 +210,33 @@ label {
 	outline: none;
 }
 
-.container p a {
-    transition: all 0.3s ease 0s;
+/* ----- repos ----- */
+#repos {
+    width: 950px;
+    margin: 60px auto;
+    border: 1px solid gray;
 }
-.container p a:hover {
-	text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+#repos div {
+	box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease 0s;
+    width: 150px;
+    height: 150px;
+    display: inline-table;
+    padding: 10px;
+    margin: 10px;
+}
+#repos div:hover {
+	box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
 	transform: translateY(-7px);
+}
+.error {
+	color: red;
+	margin: 0;
+	font-size: 12px;
 }
 
 /* ----- commits ----- */
-.container {
+#commits {
 	width: 50%;
 	margin: 0 auto;
 }
@@ -235,6 +253,13 @@ label {
   width: 50%;
   margin: 0 auto;
   display: block;
+  border: none;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+  transition: all 0.3s ease 0s;
+}
+.container input[type="text"]:hover {
+  transform: translateY(-4px);
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.2);
 }
 .container button {
     display: block;
@@ -358,6 +383,12 @@ img {
   }
   .sub-title {
   	float: left;
+  }
+  .container {
+  	width: 100%;
+  }
+  .main {
+  	border: none;
   }
 }
 

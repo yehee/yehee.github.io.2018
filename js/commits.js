@@ -9,6 +9,7 @@ var commits = new Vue({
     directory: 'alice-0-kim/alice-0-kim.github.io',
     branches: ['master', 'dev'],
     currentBranch: 'master',
+    error: '',
     commits: null
   },
   
@@ -32,6 +33,12 @@ var commits = new Vue({
   
   methods: {
     fetchData: function () {
+      if (!this.directory.includes('/')) {
+      	this.error = 'The format must includes both user and repository name.';
+      	return
+      } else {
+      	this.error = '';
+      }
       var xhr = new XMLHttpRequest()
       var self = this
       xhr.open('GET', apiURL1 + self.directory + apiURL2 + self.currentBranch)
