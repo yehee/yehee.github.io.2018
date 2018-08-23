@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:300');
 /* ----- home ----- */
 html, body {
   /* padding: 0; */
@@ -5,10 +6,15 @@ html, body {
 }
 
 body {
-  font-family: 'IBM Plex Sans', sans-serif;
+  /* font-family: 'IBM Plex Sans', sans-serif; */
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   line-height: 1.75em;
 }
 
+a,
+.clickable {
+  cursor: pointer;
+}
 .header-contact-list {
   width: 25%;
   float: left;
@@ -212,22 +218,9 @@ label {
 
 /* ----- repos ----- */
 #repos {
-    width: 950px;
+    width: 700px;
     margin: 60px auto;
-    border: 1px solid gray;
-}
-#repos div {
-	box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease 0s;
-    width: 150px;
-    height: 150px;
-    display: inline-table;
-    padding: 10px;
-    margin: 10px;
-}
-#repos div:hover {
-	box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
-	transform: translateY(-7px);
+    position: relative;
 }
 .error {
 	color: red;
@@ -305,7 +298,63 @@ img {
     position: absolute;
     margin-top: 10px;
 }
+.repo {
+    background: linear-gradient(-45deg, orange, pink, lightblue 85%);
+    background-position: 0% 50%;
+    background-size: 400% 400%;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease 0s;
+    width: calc(33.333% - 19px);
+    display: inline-table;
+    margin: 10px;
+}
+.repo:hover {
+	-webkit-animation: Gradient 5s ease infinite;
+	-moz-animation: Gradient 5s ease infinite;
+	animation: Gradient 5s ease infinite;
+	box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
+	transform: translateY(-7px);
+}
+.repo:after {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% - 30px);
+}
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 10% 10%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
 
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 10% 10%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 10% 10%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
 /* ----- breakpoints ----- */
 
 @media only screen and (min-width: 1385px) {

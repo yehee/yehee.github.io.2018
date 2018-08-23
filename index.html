@@ -21,13 +21,16 @@
    <body>
 	<div id="repos" class="container">
 		<h2><a href="https://github.com/alice-0-kim">@alice-0-kim</a></h2>
-
-			<template v-for="project in projects">
-				<div v-if="!project.fork">
-					<a :href="project.html_url">{{ project.name }}</a>
-				</div>
+		<div>{{ curr }} of {{ total }}; {{ limit }} projects displayed per page</div>
+		<div @click="prev" class="clickable" style="background:url(images/next.png)no-repeat center; width:50px; height:50px; transform:rotate(180deg); position: absolute; top: 50%; left: 0;"></div>
+		<div style="overflow:hidden; width:600px; margin:auto;">
+			<template v-for="project in pizza">
+				<a :href="project.html_url" class="repo" style="border-radius:50%;">
+					{{ project.name }}
+				</a>
 			</template>
-
+		</div>
+		<div @click="next" class="clickable" style="background:url(images/next.png)no-repeat center; width:50px; height:50px; position: absolute; top: 50%; right: 0;"></div>
 	</div>
 	<script src="js/repos.js"></script>
 	<div id="commits" class="container">
