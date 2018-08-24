@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:300');
-/* ----- home ----- */
+
+* {
+	transition: all 0.3s ease;
+}
 html, body {
-  /* padding: 0; */
-  /* margin: 0; */
+
 }
 
 body {
-  /* font-family: 'IBM Plex Sans', sans-serif; */
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  line-height: 1.75em;
+	/* font-family: 'IBM Plex Sans', sans-serif; */
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	line-height: 1.75em;
+	background: linear-gradient(-45deg, orange, pink, lightblue 85%);
+    background-position: 0% 50%;
+    background-size: 400% 400%;
+	-webkit-animation: Gradient 5s ease infinite;
+	-moz-animation: Gradient 5s ease infinite;
+	animation: Gradient 5s ease infinite;
 }
 
 a,
@@ -36,7 +44,7 @@ h4 {
   width: 75%;
   float: right;
   min-height: 500px;
-  border-left: 1px solid lightgray;
+  /* border-left: 1px solid lightgray; */
   box-sizing: border-box;
   margin: 20px 0;
 }
@@ -118,13 +126,14 @@ label {
 }
 
 #main-menu {
-  width: 100%;
-  position: fixed;
-  top: 1em;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  transition: width 0.5s;
+    position: fixed;
+    padding: 1em;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: width 0.5s;
+    background-color: rgba(255,255,255,0.5);
 }
 
 .sub-title {
@@ -179,48 +188,31 @@ label {
   background: linear-gradient(to right, #acb6e5, #afeeee);
 }
 #click-hint {
-  margin: 0 45%;
-  opacity: 1;
-  font-size: 3em;
-  font-weight: 900;
-  width: 10%;
-  position: absolute;
-  bottom: 1rem;
-  text-align: center;
-  color: #fff;
-  transition: opacity 0.5s;
-  transform: translate3d(0px,0px,0px) rotate(90deg);
+    margin: 0 45%;
+    opacity: 1;
+    font-weight: 900;
+    width: 10%;
+    position: absolute;
+    bottom: 3em;
+    text-align: center;
+    color: #fff;
+    transition: opacity 0.5s;
+    text-transform: uppercase;
+    border: 1px solid #fff;
 }
 
 #click-hint:hover {
-  animation-duration: 0.3s;
-  animation-name: move;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes move {
-  from {
-    bottom: 1rem;
-  }
-
-  to {
-    bottom: 2rem;
-  }
-}
-
-* {
-	outline: none;
-}
-*:active {
-	outline: none;
+	-webkit-animation: move 0.3s alternate infinite;
+	-moz-animation: move 0.3s alternate infinite;
+	animation: move 0.3s alternate infinite;
 }
 
 /* ----- repos ----- */
 #repos {
     width: 700px;
-    margin: 60px auto;
+    margin: 120px auto;
     position: relative;
+    height: 730px;
 }
 .error {
 	color: red;
@@ -320,6 +312,9 @@ img {
     display: block;
     padding-bottom: calc(100% - 30px);
 }
+
+/* ----- keyframes ----- */
+
 @-webkit-keyframes Gradient {
 	0% {
 		background-position: 10% 10%
@@ -355,6 +350,44 @@ img {
 		background-position: 0% 50%
 	}
 }
+
+@-webkit-keyframes move {
+	from {
+		bottom: 3rem;
+	}
+
+	to {
+		bottom: 3.25rem;
+	}
+}
+
+@-moz-keyframes move {
+	from {
+		bottom: 3rem;
+	}
+
+	to {
+		bottom: 3.25rem;
+	}
+}
+
+@keyframes move {
+	from {
+		bottom: 3rem;
+	}
+
+	to {
+		bottom: 3.25rem;
+	}
+}
+
+* {
+	outline: none;
+}
+*:active {
+	outline: none;
+}
+
 /* ----- breakpoints ----- */
 
 @media only screen and (min-width: 1385px) {
