@@ -4,7 +4,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Alice Kim | Student</title>
-      <link rel="shortcut icon" type="image/png" href="images/woman.png"></link>
+      <link rel="shortcut icon" type="image/png" href="images/woman.png">
+      </link>
       <!-- Bootstrap 3 -->
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
@@ -14,316 +15,229 @@
       <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
-      <script type='text/javascript' src='js/scripts.min.js'></script>
+      <script type='text/javascript' src='js/scripts.js'></script>
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
    </head>
    <!-- MAIN CONTENT -->
    <body>
-	<div id="repos" class="container">
-		<h2><a href="https://github.com/alice-0-kim">@alice-0-kim</a></h2>
-		<div>{{ curr }} of {{ total }}; {{ limit }} projects displayed per page</div>
-		<div @click="prev" class="clickable" style="background:url(images/next.png)no-repeat center; width:50px; height:50px; transform:rotate(180deg); position: absolute; top: 50%; left: 0;"></div>
-		<div style="overflow:hidden; width:600px; margin:auto;">
-			<template v-for="project in pizza">
-				<a :href="project.html_url" class="repo" style="border-radius:50%;">
-					{{ project.name }}
-				</a>
-			</template>
-		</div>
-		<div @click="next" class="clickable" style="background:url(images/next.png)no-repeat center; width:50px; height:50px; position: absolute; top: 50%; right: 0;"></div>
-	</div>
-	<script src="js/repos.js"></script>
-	<div id="commits" class="container">
-		<p class="error" v-if="error.length != 0">{{ error }}</p>
-		<input type="text" :id="directory" name="directory" v-model="directory"></input>
-		<button @click="fetchData" class="button">Send</button>
-		<p>Latest Commits on Github: 
-			<span>{{ directory }}</span>
-			at
-			<span>{{ currentBranch }}</span>
-		</p>
-		<h4>{{ directory }}@{{ currentBranch }}</h4>
-		<ul>
-			<li v-for="record in commits">
-				<img :src="record.author.avatar_url" class="left"/>
-				<div class="right">
-					<a :href="record.html_url" target="_blank" class="commit">{{ record.sha.slice(0, 7) }}</a>
-					-
-					<span class="message">{{ record.commit.message | truncate }}</span>
-					<br>
-					by
-					<span class="author">
-						<a :href="record.author.html_url" target="_blank">{{ record.commit.author.name }}</a>
-					</span>
-					at
-					<span class="date">{{ record.commit.author.date | formatDate }}</span>
-				</div>
-			</li>
-		</ul>
-	</div>
-	<script src="js/commits.js"></script>
-      <div class="wrapper" style="position:relative;margin:0 auto;">
-         <div class="main-menu" id="main-menu">
-            <div class="main-menu-inner-wrapper" id="main-menu-inner-wrapper">
-               <div class="topnav" id="menu-items" style="float:right;">
-                  <a class="item" href="#PROFILE">
-                  PROFILE
+      <div id="repos" class="container">
+         <h2>
+            <a href="https://github.com/alice-0-kim">@alice-0-kim</a>
+         </h2>
+         <div>{{ curr }} of {{ total }}; {{ limit }} projects displayed per page</div>
+         <div @click="prev" class="clickable" style="background:url(images/next.png)no-repeat center; width:50px; height:50px; transform:rotate(180deg); position: absolute; top: 50%; left: 0;"></div>
+         <div style="overflow:hidden; width:600px; margin:auto;">
+            <template v-for="project in pizza">
+               <a :href="project.html_url" class="repo" style="border-radius:50%;">
+               {{ project.name }}
+               </a>
+            </template>
+         </div>
+         <div @click="next" class="clickable" style="background:url(images/next.png)no-repeat center; width:50px; height:50px; position: absolute; top: 50%; right: 0;"></div>
+      </div>
+      <script src="js/repos.js"></script>
+      <div id="commits" class="container">
+         <p class="error" v-if="error.length != 0">{{ error }}</p>
+         <input type="text" :id="directory" name="directory" v-model="directory"></input>
+         <button @click="fetchData" class="button">Send</button>
+         <p>Latest Commits on Github: 
+            <span>{{ directory }}</span>
+            at
+            <span>{{ currentBranch }}</span>
+         </p>
+         <h4>{{ directory }}@{{ currentBranch }}</h4>
+         <ul>
+            <li v-for="record in commits">
+               <img :src="record.author.avatar_url" class="left"/>
+               <div class="right">
+                  <a :href="record.html_url" target="_blank" class="commit">{{ record.sha.slice(0, 7) }}</a>
+                  -
+                  <span class="message">{{ record.commit.message | truncate }}</span>
+                  <br>
+                  by
+                  <span class="author">
+                  <a :href="record.author.html_url" target="_blank">{{ record.commit.author.name }}</a>
+                  </span>
+                  at
+                  <span class="date">{{ record.commit.author.date | formatDate }}</span>
+               </div>
+            </li>
+         </ul>
+      </div>
+      <script src="js/commits.js"></script>
+      <div id="main">
+         <div class="main-menu">
+            <div class="topnav" id="menu-items" style="float:right;">
+               <a class="item" href="#PROFILE">
+               PROFILE
+               </a>
+               <a class="item" href="#INTRODUCTION">
+               INTRODUCTION
+               </a>
+               <a class="item" href="#EDUCATION">
+               EDUCATION
+               </a>
+               <a class="item" href="#CAREER">
+               CAREER
+               </a>
+               <a class="item" href="#SKILLS">
+               SKILLS
+               </a>
+               <a class="item" href="#PROJECTS">
+               PROJECTS
+               </a>
+               <a class="item" href="#CONTACT">
+               CONTACT
+               </a>
+               <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="toggle_menu_items()">&#9776;</a>
+            </div>
+         </div>
+         <div class="hero-video">
+            <video id="vid" width="100%" height="100%" autoplay loop muted>
+               <source src="videos/Ferris-wheel.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+            </video>
+            <a href="#PROFILE" id="click-hint">View more</a>
+         </div>
+         <div class="profile" id="PROFILE">
+            <div class="inner__profile">
+               <h2>ALICE</h2>
+               <h3>Kim</h3>
+               <p>Student at the University of British Columbia</p>
+            </div>
+            <div class="inner__profile">
+               <div>
+                  <h4>Location</h4>
+                  <address>Vancouver, BC</address>
+               </div>
+               <div>
+                  <h4>Phone</h4>
+                  <p>778.988.7498</p>
+               </div>
+               <div>
+                  <h4>GitHub</h4>
+                  <a href="https://www.github.com/alice-0-kim">
+                     <p>/alice-0-kim</p>
                   </a>
-                  <a class="item" href="#INTRODUCTION">
-                  INTRODUCTION
-                  </a>
-                  <a class="item" href="#EDUCATION">
-                  EDUCATION
-                  </a>
-                  <a class="item" href="#CAREER">
-                  CAREER
-                  </a>
-                  <a class="item" href="#SKILLS">
-                  SKILLS
-                  </a>
-                  <a class="item" href="#PROJECTS">
-                  PROJECTS
-                  </a>
-                  <a class="item" href="#CONTACT">
-                  CONTACT
-                  </a>
-                  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="toggle_menu_items()">&#9776;</a>
+               </div>
+               <div>
+                  <h4>Email</h4>
+                  <p>alice828ubc@gmail.com</p>
                </div>
             </div>
          </div>
-         <div class="banner">
-            <div class="banner-background" style="position:relative;">
-               <video id="vid" width="100%" height="100%" autoplay loop muted>
-                  <source src="videos/Ferris-wheel.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-               </video>
-               <a href="#first-name" id="click-hint">View more</a>
-            </div>
-         </div>
-         <div class="column-container" id="PROFILE" style="opacity:1;">
-            <div class="profile-contact">
-               <div class="profile-contact inner-wrapper">
-                  <h2 id="first-name"">ALICE</h2>
-                  <h3>Kim</h3>
-                  <p>Student at the University of British Columbia</p>
-               </div>
-               <div class="header-contact-main" style="overflow:auto;padding:30px;" >
-                  <div class="header-contact-list">
-                     <h4>Location</h4>
-                     <address>Vancouver, BC</address>
-                  </div>
-                  <div class="header-contact-list">
-                     <h4>Phone</h4>
-                     <p>778.988.7498</p>
-                  </div>
-                  <div class="header-contact-list">
-                     <h4>GitHub</h4>
-                     <a href="https://www.github.com/alice-0-kim">
-                        <p>/alice-0-kim</p>
-                     </a>
-                  </div>
-                  <div class="header-contact-list">
-                     <h4>Email</h4>
-                     <p>alice828ubc@gmail.com</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="column-container" id="INTRODUCTION">
+         <div class="column" id="INTRODUCTION">
             <div class="intro sidebar">
-               <p class="sub-title">INTRODUCTION</p>
+               <p>INTRODUCTION</p>
             </div>
             <div class="intro main">
-               <div class="profile-container">
-                  <p>
-                     I am a student at the University of British Columbia pursuing a Bachelor's degree in Computer Science and Statistics.
-                  </p>
-                  <br>
-                  <p>
-                     I am currently interested in 
-                     <strong style="color:green;">machine learning</strong> and programming in 
-                     <strong style="color:green;">Python</strong>.
-                     <br>
-                     <br>Currently, I am doing an internship on campus, mainly responsible for directly communicating with clients about website migration, resolving issues and/or simple feature requests for current websites.
-                  </p>
-               </div>
+               <p>I am a student at the University of British Columbia pursuing a Bachelor's degree in Computer Science and Statistics.</p>
+               <p>I am currently interested in <strong style="color:green;">machine learning</strong> and programming in <strong style="color:green;">Python</strong>.</p>
+               <p>Currently, I am doing an internship on campus, mainly responsible for directly communicating with clients about website migration, resolving issues and/or simple feature requests for current websites.</p>
             </div>
          </div>
-         <div class="column-container" id="EDUCATION">
+         <div class="column" id="EDUCATION">
             <div class="education sidebar">
-               <p class="sub-title">EDUCATION</p>
+               <p>EDUCATION</p>
             </div>
-            <div class="education main">
-               <div class="education-container">
-                  <div class="education">
-                     <div class="entry-header">
-                        <h4 class="entry-h4">University of British Columbia</h4>
-                        <p class="entry-p">2015 - PRESENT</p>
-                     </div>
-                     <div class="entry-footer" style="position:relative;margin:auto;">
-                        <p>Combined Major in Computer Science and Statistics, Bachelor of Science</p>
+            <div class="main">
+               <div v-for="entry in educations">
+                  <div>
+                     <h4>{{ entry.title }}</h4>
+                     <p v-if="entry.from">{{ entry.from | uppercase }}<span v-if="entry.to"> - {{ entry.to | uppercase }}</span></p>
+                     <address v-if="entry.location">{{ entry.location }}</address>
+                  </div>
+                  <div class="body">
+                     <div v-if="entry.body" v-for="line in entry.body">
+                        <div>{{ line }}</div>
                      </div>
                   </div>
                </div>
             </div>
          </div>
-         <div class="column-container" id="CAREER">
+         <div class="column" id="CAREER">
             <div class="careers sidebar">
-               <p class="sub-title">CAREER</p>
+               <p>CAREER</p>
             </div>
-            <div class="careers main">
-               <div class="careers-container">
+            <div class="main">
+               <div v-for="entry in careers">
                   <div>
-                     <div class="entry-header">
-                        <h4 class="entry-h4">Quality Assurance Support Specialist</h4>
-                        <p class="entry-p">JAN, 2018 - PRESENT</p>
-                     </div>
-                     <div class="entry-footer">
-                        <p style="line-height: 2em;">Languages: JavaScript, CSS, PHP
-                           <br>
-                           Tools: Drupal, Platform.sh, GitHub, Blackfire
-                           <br>
-                           IDEs: PHPStorm
-                        </p>
-                        <hr>
-                        <p>Mainly responsible for:</p>
-                        <ul style="list-style-type:*;line-height: 2em;">
-                           <li>simple feature requests</li>
-                           <li>test automation</li>
-                           <li>regular maintenance of the websites</li>
-                        </ul>
-                     </div>
+                     <h4>{{ entry.title }}</h4>
+                     <p v-if="entry.from">{{ entry.from | uppercase }}<span v-if="entry.to"> - {{ entry.to | uppercase }}</span></p>
+                     <address v-if="entry.location">{{ entry.location }}</address>
                   </div>
-                  <br>
-                  <br>
-                  <div>
-                     <div class="entry-header">
-                        <h4 class="entry-h4">Barista</h4>
-                        <p class="entry-p">AUG, 2016 - PRESENT</p>
-                     </div>
-                     <div class="entry-footer">
-                        <p>Blenz</p>
-                        <ADDRESS>3381 Wesbrook Mall, Vancouver BC, Canada</ADDRESS>
-                        <hr>
-                        <p>Mainly responsible for:</p>
-                        <ul style="list-style-type:*;line-height: 2em;">
-                           <li>greeting and taking orders from customers</li>
-                           <li>serving food and beverages</li>
-                           <li>maintaining hygiene workplace</li>
-                        </ul>
-                     </div>
-                  </div>
-                  <br>
-                  <br>
-                  <div>
-                     <div class="entry-header">
-                        <h4 class="entry-h4">Teaching Assistant</h4>
-                        <p class="entry-p">MAY, 2017 - JUL, 2017</p>
-                     </div>
-                     <div class="entry-footer">
-                        <p>University of British Columbia</p>
-                        <p>CPSC 121: Models of Computation</p>
-                        <hr>
-                        <p>Physical and mathematical structures of computation from boolean algebra to sequential instruction execution.</p>
+                  <div class="body">
+                     <div v-if="entry.body" v-for="line in entry.body">
+                        <div>{{ line }}</div>
                      </div>
                   </div>
                </div>
             </div>
          </div>
-         <div class="column-container" id="SKILLS">
+         <div class="column" id="SKILLS">
             <div class="skills sidebar">
-               <p class="sub-title">SKILLS</p>
+               <p>SKILLS</p>
             </div>
-            <div class="skills main">
-               <div class="skills-container">
-                  <div class="percentage-bar" id="drupal" style="width:0px;height:10px;margin-bottom:20px;border-radius: 20px;"></div>
-                  <div class="skill">
-                     <h4>Drupal</h4>
-                     <p>Language: JavaScript, CSS, PHP</p>
-                     <hr>
-                     <p>An open-source content-management framework.</p>
+            <div class="main">
+               <div v-for="entry in skills">
+                  <div>
+                     <h4>{{ entry.title }}</h4>
+                     <p v-if="entry.from">{{ entry.from | uppercase }}<span v-if="entry.to"> - {{ entry.to | uppercase }}</span></p>
+                     <address v-if="entry.location">{{ entry.location }}</address>
                   </div>
-                  <br>
-                  <br>
-                  <div class="percentage-bar" id="javascript" style="width:0px;height:10px;margin-bottom:20px;border-radius: 20px;"></div>
-                  <div class="skill">
-                     <h4>JavaScript</h4>
-                     <hr>
-                     <p>Programming language</p>
-                  </div>
-                  <br>
-                  <br>
-                  <div class="percentage-bar" id="test" style="width:0px;height:10px;margin-bottom:20px;border-radius: 20px;"></div>
-                  <div class="skill">
-                     <h4>Test Automation</h4>
-                     <hr>
-                     <p>Unit, performance testing and website monitoring.</p>
+                  <div class="body">
+                     <div v-if="entry.body" v-for="line in entry.body">
+                        <div>{{ line }}</div>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
-         <div class="column-container" id="PROJECTS">
+         <div class="column" id="PROJECTS">
             <div class="projects sidebar">
-               <p class="sub-title">PROJECTS</p>
+               <p>PROJECTS</p>
             </div>
-            <div class="projects main">
-               <div class="projects-container">
-                  <div class="project">
-                     <h4>Shinobi vs. Robot</h4>
-                     <p>Language: JavaScript, HTML</p>
-                     <a class="learn-more" href="https://github.com/alice-0-kim/game">
-                        <p>Learn more</p>
-                     </a>
+            <div class="main">
+               <div v-for="entry in projects">
+                  <div>
+                     <h4>{{ entry.title }}</h4>
+                     <p v-if="entry.from">{{ entry.from | uppercase }}<span v-if="entry.to"> - {{ entry.to | uppercase }}</span></p>
+                     <address v-if="entry.location">{{ entry.location }}</address>
                   </div>
-                  <br>
-                  <br>
-                  <div class="project">
-                     <h4>My Website</h4>
-                     <p>Language: HTML, CSS</p>
-                     <a class="learn-more" href="https://github.com/alice-0-kim/alice-0-kim.github.io">
-                        <p>Learn more</p>
-                     </a>
-                  </div>
-                  <br>
-                  <br>
-                  <div class="project">
-                     <h4>Christmas Card</h4>
-                     <p>Android Studio</p>
-                     <p>Language: Java</p>
-                     <a class="learn-more" href="https://github.com/alice-0-kim/Christmas_Card">
-                        <p>Learn more</p>
-                     </a>
+                  <div class="body">
+                     <div v-if="entry.body" v-for="line in entry.body">
+                        <div>{{ line }}</div>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
-         <div class="column-container" id="CONTACT">
+         <div class="column" id="CONTACT">
             <div class="contact-form sidebar">
-               <p class="sub-title">CONTACT</p>
+               <p>CONTACT</p>
             </div>
-            <div class="contact-form-container main">
-               <div class="contact-form-main" >
-                  <form action="mailto:aliceykim0828@gmail.com" method="post" enctype="text/plain" target="_top">
-                     <label for="fname">First Name</label>
-                     <input type="text" id="fname" name="firstname" placeholder="Your first name here.">
-                     <label for="lname">Last Name</label>
-                     <input type="text" id="lname" name="lastname" placeholder="Your last name here.">
-                     <label for="email">E-mail</label>
-                     <input type="text" id="email" name="email" placeholder="Your e-mail here.">
-                     <label for="subject">Contacting about</label>
-                     <select id="subject" name="subject">
-                        <option value="internship">Internship opportunity</option>
-                        <option value="good">This is a good website!</option>
-                        <option value="bello">Just to say hi :)</option>
-                     </select>
-                     <label for="message">Subject</label>
-                     <textarea id="message" name="message" placeholder="Say hi?"></textarea>
-                     <input type="submit" value="Submit" name="submit">
-                  </form>
-               </div>
+            <div class="main">
+               <form action="mailto:aliceykim0828@gmail.com" method="post" enctype="text/plain" target="_top">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="fname" name="firstname" placeholder="Your first name here.">
+                  <label for="lname">Last Name</label>
+                  <input type="text" id="lname" name="lastname" placeholder="Your last name here.">
+                  <label for="email">E-mail</label>
+                  <input type="text" id="email" name="email" placeholder="Your e-mail here.">
+                  <label for="subject">Contacting about</label>
+                  <select id="subject" name="subject">
+                     <option value="internship">Internship opportunity</option>
+                     <option value="good">This is a good website!</option>
+                     <option value="bello">Just to say hi :)</option>
+                  </select>
+                  <label for="message">Subject</label>
+                  <textarea id="message" name="message" placeholder="Say hi?"></textarea>
+                  <input type="submit" value="Submit" name="submit">
+               </form>
             </div>
          </div>
       </div>
+      <script src="js/entry.js"></script>
       <!-- END MAIN CONTENT -->
       <!-- FOOTER -->
       <!-- END FOOTER -->

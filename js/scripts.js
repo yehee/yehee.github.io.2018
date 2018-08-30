@@ -15,24 +15,27 @@ function setOpacity() {
 	arrow.style.opacity = x > 0 ? 1 : 0;
 }
 $(document).ready(function () {
-	/* Triggers every time the window is scrolled */
+	// fade-in
 	$(window).scroll(function () {
-		/* Checks the location of each desired element */
-		$('.column-container').each(function (i) {
+		/*
+		$('.column').each(function (i) {
 			var top_of_object = $(this).position().top;
 			var bottom_of_window = $(window).scrollTop() + $(window).height();
-			/* If the object is completely visible in the window, fade it it */
-			if (bottom_of_window > top_of_object - 50) {
+
+			// if the object is completely visible in the window, fade it it
+			if (bottom_of_window > top_of_object) {
 				$(this).animate({
 					'opacity': '1'
-				}, 2000);
+				}, 1000);
 			}
 		});
+		
 		$('.percentage-bar').each(function (i) {
 			var top_of_object = $(this).position().top;
 			var bottom_of_window = $(window).scrollTop() + $(window).height();
-			/* If the object is completely visible in the window, fade it it */
-			if (bottom_of_window > top_of_object - 50) {
+
+			// if the object is completely visible in the window, fade it it
+			if (bottom_of_window > top_of_object) {
 				var target = '80%';
 				if ($(this).attr('id') == 'test') {
 					target = '70%';
@@ -44,24 +47,20 @@ $(document).ready(function () {
 				}, 2000);
 			}
 		});
+		*/
 		setOpacity();
 	});
-	// Add smooth scrolling to all links
-	$("a").on('click', function(event) {
-		// Make sure this.hash has a value before overriding default behavior
+
+	// smooth scrolling
+	$("a").on('click', function (event) {
 		if (this.hash !== "") {
-			// Prevent default anchor click behavior
 			event.preventDefault();
-			// Store hash
 			var hash = this.hash;
-			// Using jQuery's animate() method to add smooth page scroll
-			// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
 			$('html, body').animate({
 				scrollTop: $(hash).offset().top
-			}, 800, function(){
-				// Add hash (#) to URL when done scrolling (default click behavior)
+			}, 800, function () {
 				window.location.hash = hash;
 			});
-		} // End if
+		}
 	});
 });
