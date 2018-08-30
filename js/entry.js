@@ -21,11 +21,7 @@ var main = new Vue ({
         'body': [
           'Languages: JavaScript, HTML/CSS, PHP, SQL',
           'Tools: GitHub, Blackfire, Selenium, MySQL',
-          'Framework: Vue.js, Drupal',
-          'Responsibilities:',
-          'web development',
-          'test automation',
-          'quality assurance'
+          'Framework: Vue.js, Drupal'
         ]
       },
       {
@@ -34,7 +30,6 @@ var main = new Vue ({
         'to': 'jul, 2018',
         'location': '3381 Wesbrook Mall, Vancouver BC, Canada',
         'body': [
-          'Responsibilities:',
           'greeting and taking orders from customers',
           'serving food and beverages',
           'maintaining hygiene workplace'
@@ -48,10 +43,7 @@ var main = new Vue ({
         'body': [
           'Course title: CPSC 121: Models of Computation',
           'Course description:',
-          'Physical and mathematical structures of computation from boolean algebra to sequential instruction execution.',
-          'Responsibilities:',
-          'leading a bi-weekly tutorial for a class of 20 students',
-          'grading assignments and exams'
+          'Physical and mathematical structures of computation from boolean algebra to sequential instruction execution.'
         ]
       }
     ],
@@ -117,6 +109,9 @@ var main = new Vue ({
   filters: {
     uppercase: function (text) {
       return text.toUpperCase()
+    },
+    capitalize: function (text) {
+      return text.charAt(0).toUpperCase() + text.substr(1);
     }
   }
 });

@@ -1,35 +1,18 @@
-function toggle_menu_items() {
- var x = document.getElementById("menu-items");
- if (x.className === "topnav") {
-		x.className += " responsive";
-		document.getElementById("main-menu").style.width = "auto";
-		document.getElementById("main-menu").style.left = "auto";
- } else {
-		x.className = "topnav";
-		document.getElementById("main-menu").style.width = "100%";
- }
-}
-function setOpacity() {
-	var arrow = document.getElementById("click-hint");
-	var x = arrow.getBoundingClientRect().top - 200;
-	arrow.style.opacity = x > 0 ? 1 : 0;
-}
 $(document).ready(function () {
 	// fade-in
 	$(window).scroll(function () {
-		/*
+		var bottom_of_window = $(window).scrollTop() + $(window).height()
 		$('.column').each(function (i) {
-			var top_of_object = $(this).position().top;
-			var bottom_of_window = $(window).scrollTop() + $(window).height();
+			var top_of_object = $(this).position().top
 
 			// if the object is completely visible in the window, fade it it
-			if (bottom_of_window > top_of_object) {
+			if (bottom_of_window > top_of_object && $(this).css('opacity') == 0) {
 				$(this).animate({
 					'opacity': '1'
 				}, 1000);
 			}
 		});
-		
+		/*
 		$('.percentage-bar').each(function (i) {
 			var top_of_object = $(this).position().top;
 			var bottom_of_window = $(window).scrollTop() + $(window).height();
@@ -48,7 +31,6 @@ $(document).ready(function () {
 			}
 		});
 		*/
-		setOpacity();
 	});
 
 	// smooth scrolling
@@ -62,5 +44,10 @@ $(document).ready(function () {
 				window.location.hash = hash;
 			});
 		}
+	});
+	
+	// hamburger button slide toggle
+	$('#hamburger').on('click', function (event) {
+		$('#menu-list').slideToggle('slow')
 	});
 });
