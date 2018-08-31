@@ -7,7 +7,7 @@ $(function () {
         // if the validator does not prevent form submit
         // if (!e.isDefaultPrevented()) {
         if (true) {
-            var url = "php/email.php";
+            var url = "email.php";
             
             // POST values in the background the the script URL
             $.ajax({
