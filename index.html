@@ -18,6 +18,7 @@
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
       <script type='text/javascript' src='js/scripts.js'></script>
+      <script type='text/javascript' src='js/email.js'></script>
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
    </head>
    <!-- MAIN CONTENT -->
@@ -217,7 +218,7 @@
                <p>CONTACT</p>
             </div>
             <div class="main">
-               <form action="mailto:aliceykim0828@gmail.com" method="post" enctype="text/plain" target="_top">
+               <form id="form" action="php/email.php" method="post" role="form">
                   <label for="fname">First Name</label>
                   <input type="text" id="fname" name="firstname" placeholder="Your first name here.">
                   <label for="lname">Last Name</label>

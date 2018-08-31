@@ -3,7 +3,7 @@
  * SOURCE: https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form
  */
 
-require 'PHPMailer-master/PHPMailerAutoload.php';
+require 'PHPMailer/PHPMailerAutoload.php';
 
 /*
  *  CONFIGURE EVERYTHING HERE
@@ -14,7 +14,7 @@ $fromEmail = 'demo@domain.com';
 $fromName = 'Demo contact form';
 
 // an email address that will receive the email with the output of the form
-$sendToEmail = 'demo@domain.com';
+$sendToEmail = 'aliceykim0828@gmail.com';
 $sendToName = 'Demo contact form';
 
 // subject of the email
@@ -29,3 +29,13 @@ $okMessage = 'Contact form successfully submitted. Thank you, I will get back to
 
 // If something goes wrong, we will display this message.
 $errorMessage = 'There was an error while submitting the form. Please try again later';
+
+$mail = new PHPMailer;
+
+$mail->setFrom($fromEmail, $fromName);
+$mail->addAddress($sendToEmail, $sendToName); // you can add more addresses by simply adding another line with $mail->addAddress();
+$mail->addReplyTo($from);
+
+if(!$mail->send()) {
+    throw new \Exception('I could not send the email.' . $mail->ErrorInfo);
+}
