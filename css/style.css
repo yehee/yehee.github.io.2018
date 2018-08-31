@@ -109,7 +109,6 @@
 }
  #repos {
 	margin: 0 auto;
-	padding-top: 170px;
 }
  #commits {
      width: 50%;
@@ -374,7 +373,7 @@
 		display: inline-block;
     }
      .repos {
-     	 width: 1200px;
+		 width: 1170px;
     }
 }
  @media only screen and (max-width: 1200px) {

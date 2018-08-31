@@ -30,7 +30,6 @@ var repos = new Vue ({
   },
   computed: {
   	pizza: function () {
-  		//this.fadeOut()
   		return this.projects.slice((this.curr - 1) * this.limit, this.curr * this.limit)
   	}
   },
@@ -61,6 +60,16 @@ var repos = new Vue ({
 					}, 500, 'swing')
 				}
 			}
+  	},
+  	handleResize: function () {
+  		console.log(window.innerWidth)
+  		if (window.innerWidth < 500) {
+  			this.limit = 1
+  		} else if (window.innerWidth < 800) {
+  			this.limit = 2
+  		} else {
+  			this.limit = 3
+  		}
   	}
   },
   filters: {
