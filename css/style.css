@@ -2,6 +2,7 @@
  *, *:active {
      outline: none;
      transition: all 0.3s ease;
+     box-sizing: border-box;
 }
  html, body {
 }
@@ -10,12 +11,13 @@
      */
      font-family: 'M PLUS Rounded 1c', sans-serif;
      line-height: 1.75em;
-     background: linear-gradient(-45deg, orange, pink, lightblue 85%);
+     /* background: linear-gradient(-45deg, orange, pink, lightblue 85%);
      background-position: 0% 50%;
      background-size: 400% 400%;
      -webkit-animation: Gradient 5s ease infinite;
      -moz-animation: Gradient 5s ease infinite;
      animation: Gradient 5s ease infinite;
+     */
 }
  a, .clickable {
      cursor: pointer;
@@ -90,7 +92,7 @@
  #click-hint {
     text-align: center;
     color: #fff;
-    transition: opacity 0.5s;
+    transition: all 0.5s ease;
     text-transform: uppercase;
     border: 3px solid #fff;
     padding: 0.2em 0.45em;
@@ -102,12 +104,12 @@
     bottom: 100px;
 }
  #click-hint:hover {
-     background: #fff;
-     color: #000;
-     border-color: #000;
+     color: #B0E0E6;
+     border-color: #B0E0E6;
 }
  #repos {
-     margin: 120px auto;
+	margin: 0 auto;
+	padding-top: 170px;
 }
  #commits {
      width: 50%;
@@ -118,8 +120,14 @@
      transition: none;
 }
  #menu-list a {
-     display: block;
-     padding: 10px;
+    display: block;
+    width: fit-content;
+    margin: 20px 10px;
+    color: #686868;
+    border-bottom: 3px solid #B0E0E6;
+}
+ #menu-list a:hover {
+	 background: #B0E0E6;
 }
  .body {
      margin: 10px 0;
@@ -155,7 +163,7 @@
 }
  .main-menu {
      position: fixed;
-     padding: 1em;
+     padding: 0.5em 1em 0.75em;
      top: 0;
      left: 0;
      right: 0;
@@ -208,16 +216,14 @@
 }
  .container button:hover {
      color: #fff;
-     background: #5353c6;
-     box-shadow: 0px 15px 20px rgba(83, 83, 198, 0.4);
-     transform: translateY(-7px);
+     background: #e6b0c5;
+     box-shadow: 0px 15px 20px rgba(230, 176, 197, 0.4);
+     transform: translateY(-5px);
 }
  [class$="-arrow"] {
 	 background: url(../images/next.png) no-repeat center;
-	 width: 50px;
-	 height: 50px;
-	 position: absolute;
-	 top: 50%;
+     width: 50px;
+     height: 50px;
 }
  .next-arrow {
 	 right: 0;
@@ -237,25 +243,23 @@
      margin-top: 10px;
 }
  .repos {
-    height: 600px;
- 	width: 600px;
- 	overflow: hidden;
- 	margin: auto;
+    margin: auto;
+    width: calc(100% - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
  .repo {
-     background: linear-gradient(-45deg, orange, pink, lightblue 85%);
-     background-position: 0% 50%;
-     background-size: 400% 400%;
-     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.2);
-     transition: all 0.3s ease 0s;
-     width: calc(33.333% - 19px);
-     display: inline-table;
-     margin: 10px;
+    background-image: url('../images/mountain.jpg');
+    background-position: 0% 0%;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease 0s;
+    display: inline-block;
+    float: left;
+    filter: grayscale(100%);
 }
  .repo:hover {
-     -webkit-animation: Gradient 5s ease infinite;
-     -moz-animation: Gradient 5s ease infinite;
-     animation: Gradient 5s ease infinite;
+     filter: grayscale(0%);
      box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
      transform: translateY(-7px);
 }
@@ -263,6 +267,12 @@
      content: "";
      display: block;
      padding-bottom: calc(100% - 30px);
+}
+ .repo-name {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: calc(50% - 14px);
 }
 /* keyframes */
  @-webkit-keyframes Gradient {
@@ -298,6 +308,54 @@
          background-position: 0% 50% 
     }
 }
+ @-webkit-keyframes Slidedown {
+     from {
+         background-position: 0% 0%
+    }
+     to {
+         background-position: 0% 100%
+    }
+}
+ @-moz-keyframes Slidedown {
+     from {
+         background-position: 0% 0%
+    }
+     to {
+         background-position: 0% 100%
+    }
+}
+ @keyframes Slidedown {
+     from {
+         background-position: 0% 0%
+    }
+     to {
+         background-position: 0% 100%
+    }
+}
+ @-webkit-keyframes Tonedown {
+     from {
+         -webkit-filter: grayscale(100%)
+    }
+     to {
+         -webkit-filter: grayscale(0%)
+    }
+}
+ @-moz-keyframes Tonedown {
+     from {
+         filter: grayscale(100%)
+    }
+     to {
+         filter: grayscale(0%)
+    }
+}
+ @keyframes Tonedown {
+     from {
+         filter: grayscale(100%)
+    }
+     to {
+         filter: grayscale(0%)
+    }
+}
 /* breakpoints */
  @media only screen and (min-width: 1200px) {
      .icon {
@@ -309,13 +367,11 @@
          float: right;
     }
      #menu-list a {
-         padding: 0 0.2em;
-         margin: 0 10px;
-         display: inline-block;
-         border-bottom: 1px solid pink;
+		margin: 0 0.5em;
+		display: inline-block;
     }
-     #menu-list a:hover {
-         background: pink;
+     .repos {
+     	 width: 1200px;
     }
 }
  @media only screen and (max-width: 1200px) {

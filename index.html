@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Alice Kim | Student</title>
@@ -22,20 +23,17 @@
    <!-- MAIN CONTENT -->
    <body>
       <div id="repos" class="container">
-         <a href="https://github.com/alice-0-kim">
-         	<h2>@alice-0-kim</h2>
-		</a>
-         <div class="clickable prev-arrow" @click="prev"></div>
          <div class="repos">
-            <template v-for="project in pizza">
-               <a :href="project.html_url" class="repo" style="border-radius:50%;">
-               {{ project.name }}
-               </a>
-            </template>
+            <div class="clickable prev-arrow" @click="prev"></div>
+            <a v-for="project in pizza" :href="project.html_url" class="repo" v-bind:style="{ width: (100 / limit) + '%' }" ref="project">
+               <div class="repo-name">{{ project.name | normalize }}</div>
+            </a>
+            <div class="clickable next-arrow" @click="next"></div>
          </div>
-         <div class="clickable next-arrow" @click="next"></div>
-         <div style="text-align:center;"><h2>{{ curr }} of {{ total }}</h2></div>
-         <div style="text-align:center;">{{ limit }} projects displayed per page</div>
+         <div style="text-align:center;clear:both;padding-top:50px">
+            <h2>{{ curr }} of <span style="color:#B0E0E6;">{{ total }}</span></h2>
+         </div>
+         <div style="text-align:center;clear:both;">{{ limit }} projects displayed per page</div>
       </div>
       <script src="js/repos.js"></script>
       <div id="commits" class="container">
@@ -69,7 +67,7 @@
       <script src="js/commits.js"></script>
       <div id="main">
          <div class="main-menu">
-		    <a id="hamburger" href="javascript:void(0);" class="icon">&#9776;</a>
+            <a id="hamburger" href="javascript:void(0);" class="icon">&#9776;</a>
             <div id="menu-list">
                <a href="#PROFILE">
                PROFILE

@@ -4,7 +4,7 @@ var repos = new Vue ({
   el: '#repos',
   data: {
     projects: [],
-  	limit: 9,
+  	limit: 3,
   	curr: 1,
   	total: 0,
   },
@@ -25,27 +25,47 @@ var repos = new Vue ({
       return
     })
   },
+  beforeUpdate () {
+  	this.fadeOut()
+  },
   computed: {
   	pizza: function () {
-  		console.log((this.curr - 1) * this.limit)
-  		console.log(this.curr * this.limit)
+  		//this.fadeOut()
   		return this.projects.slice((this.curr - 1) * this.limit, this.curr * this.limit)
   	}
   },
   methods: {
   	prev: function () {
   		if (this.curr == 1) {
-  			alert('This is the first page!')
+  			this.curr = this.total
   		} else {
   			this.curr --
   		}
   	},
   	next: function () {
 			if (this.curr == this.total) {
-				alert('This is the last page!')
+  			this.curr = 1
 			} else {
 				this.curr ++
 			}
+  	},
+  	fadeOut: function () {
+			var previous_set = this.$refs['project']
+			if (previous_set) {
+				console.log(previous_set)
+				for (var key in previous_set) {
+					var prev = previous_set[key]
+					//console.log(prev)
+					prev.animate({
+						margin: ['20px 0 0 0', '0']
+					}, 500, 'swing')
+				}
+			}
+  	}
+  },
+  filters: {
+  	normalize: function (value) {
+  		return value.replace(/[\W_]+/g, ' ').toUpperCase()
   	}
   }
 });
