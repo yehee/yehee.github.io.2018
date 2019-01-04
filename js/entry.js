@@ -16,7 +16,7 @@ var main = new Vue ({
       {
         'title': 'Quality Assurance Support Specialist',
         'from': 'jan, 2018',
-        'to': 'present',
+        'to': 'aug, 2018',
         'location': 'IT Web Services, University of British Columbia, Vancouver BC, Canada',
         'body': [
           'Languages: JavaScript, HTML/CSS, PHP, SQL',
@@ -38,12 +38,10 @@ var main = new Vue ({
       {
         'title': 'Teaching Assistant',
         'from': 'may, 2017',
-        'to': 'jul, 2017',
+        'to': 'present',
         'location': 'University of British Columbia, Vancouver BC, Canada',
         'body': [
-          'Course title: CPSC 121: Models of Computation',
-          'Course description:',
-          'Physical and mathematical structures of computation from boolean algebra to sequential instruction execution.'
+          'Courses: CPSC 121, CPSC 210, and CPSC 310'
         ]
       }
     ],

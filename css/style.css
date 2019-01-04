@@ -94,18 +94,18 @@
     color: #fff;
     transition: all 0.5s ease;
     text-transform: uppercase;
-    border: 3px solid #fff;
+    border: 5px solid #fff;
     padding: 0.2em 0.45em;
     display: block;
-    width: 125px;
+    width: 135px;
     font-size: 18px;
     position: absolute;
     left: calc(50% - 62.5px);
     bottom: 100px;
 }
  #click-hint:hover {
-     color: #FF1A1A;
-     border-color: #FF1A1A;
+     color: #ffbf00;
+     border-color: #ffbf00;
 }
  #repos {
 	margin: 0 auto;
@@ -146,6 +146,9 @@
      min-height: 500px;
      box-sizing: border-box;
      padding: 30px;
+}
+ .main > div {
+     margin-bottom: 5em;
 }
  .inner__profile {
      overflow: auto;
