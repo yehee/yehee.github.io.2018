@@ -104,8 +104,8 @@
     bottom: 100px;
 }
  #click-hint:hover {
-     color: #B0E0E6;
-     border-color: #B0E0E6;
+     color: #FF1A1A;
+     border-color: #FF1A1A;
 }
  #repos {
 	margin: 0 auto;
@@ -122,11 +122,10 @@
     display: block;
     width: fit-content;
     margin: 20px 10px;
-    color: #686868;
-    border-bottom: 3px solid #B0E0E6;
+    color: #888;
 }
  #menu-list a:hover {
-	 background: #B0E0E6;
+    color: #000;
 }
  #form {
 
@@ -165,7 +164,7 @@
 }
  .main-menu {
      position: fixed;
-     padding: 0.5em 1em 0.75em;
+     padding: 0.5em 1em;
      top: 0;
      left: 0;
      right: 0;
@@ -218,8 +217,8 @@
 }
  .container button:hover {
      color: #fff;
-     background: #e6b0c5;
-     box-shadow: 0px 15px 20px rgba(230, 176, 197, 0.4);
+     background: #00008b;
+     box-shadow: 0px 15px 20px rgba(0, 0, 139, 0.4);
      transform: translateY(-5px);
 }
  [class$="-arrow"] {
