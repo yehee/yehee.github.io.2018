@@ -3,7 +3,5 @@
 
 A responsive theming template project.
 
-Visit the live website [&#10172;](https://alice-0-kim.github.io)
-
-![screenshot](/images/screenshot.png)
+Visit the live website [here](https://alice-0-kim.github.io)
 
