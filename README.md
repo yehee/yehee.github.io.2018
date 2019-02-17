@@ -1,5 +1,4 @@
-# Resume website template :mountain_snow:
-![](https://travis-ci.org/alice-0-kim/alice-0-kim.github.io.svg?branch=master)
+# Resume website template
 
 A responsive theming template project.
 
